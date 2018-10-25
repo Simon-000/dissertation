@@ -1,0 +1,3164 @@
+use "H:\ECON509\ISSP - raw data\stata6\work\issp\1985.dta", clear
+drop V4-V107 V110 V111 V113 V115 V119 V121 V126-V128 V130 V131 V133-V141
+lab drop _all
+replace V1=1985
+ren V1 year
+ren V2 person
+ren V3 country
+ren V108 condhrs
+ren V109 empstat
+ren V112 selfemp
+ren V114 private
+ren V116 union
+ren V117 age
+ren V118 gender
+ren V120 marstat
+ren V122 school
+ren V123 edcat
+ren V124 spsschl
+ren V125 spsedct
+ren V129 earncat
+ren V132 relig
+sort year country person
+save "H:\ECON509\ISSP - raw data\stata6\work\issp\1985a.dta", replace
+use "H:\ECON509\ISSP - raw data\stata6\work\issp\1986.dta", clear
+drop v4-v70 v73 v74 v76 v78 v82 v84 v89-v91 v94 v95 v97-v105
+lab drop _all
+replace v1=1986
+ren v1 year
+ren v2 person
+ren v3 country
+drop if country==8
+ren v71 condhrs
+ren v72 empstat
+ren v75 selfemp
+ren v77 private
+ren v79 union
+ren v80 age
+ren v81 gender
+ren v83 marstat
+ren v85 school
+ren v86 edcat
+ren v87 spsschl
+ren v88 spsedct
+ren v92 earn
+ren v93 earncat
+ren v96 relig
+sort year country person
+save "H:\ECON509\ISSP - raw data\stata6\work\issp\1986a.dta", replace
+use "H:\ECON509\ISSP - raw data\stata6\work\issp\1987.dta", clear
+drop v4-v72 v75 v76 v78 v80 v84 v86 v91-v93 v96 v97 v99-v108
+lab drop _all
+replace v1=1987
+replace v73=3 if v3==8 & v73==1
+replace v73=8 if v3==8 & v73==2
+replace v73=13 if v3==8 & v73==3
+replace v73=18 if v3==8 & v73==4
+replace v73=23 if v3==8 & v73==5
+replace v73=28 if v3==8 & v73==6
+replace v73=33 if v3==8 & v73==7
+replace v73=38 if v3==8 & v73==8
+replace v73=43 if v3==8 & v73==9
+replace v73=48 if v3==8 & v73==10
+replace v73=55 if v3==8 & v73==11
+replace v73=65 if v3==8 & v73==12
+ren v1 year
+ren v2 person
+ren v3 country
+drop if country==5
+replace country=15 if country==12
+ren v73 condhrs
+ren v74 empstat
+ren v77 selfemp
+ren v79 private
+ren v81 union
+ren v82 age
+ren v83 gender
+ren v85 marstat
+ren v87 school
+ren v88 edcat
+ren v89 spsschl
+ren v90 spsedct
+ren v94 earn
+ren v95 earncat
+ren v98 relig
+sort year country person
+save "H:\ECON509\ISSP - raw data\stata6\work\issp\1987a.dta", replace
+use "H:\ECON509\ISSP - raw data\stata6\work\issp\1988.dta", clear
+drop v4-v64 v68 v73-v75 v78 v79 v81-v90 v92-v94 v97-v104 v107 v108 v111 v114-v148
+lab drop _all
+replace v1=1988
+ren v1 year
+ren v2 person
+ren v3 country
+drop if country==8
+ren v65 gender
+ren v66 age
+ren v67 marstat
+ren v69 school
+ren v70 edcat
+ren v71 empstsv
+ren v72 condhrs
+ren v76 private
+ren v77 selfemp
+ren v80 union
+ren v91 relig
+ren v95 spsschl
+ren v96 spsedct
+ren v105 earn
+ren v106 earncat
+ren v109 fathschl
+ren v110 fathedct
+ren v112 mothschl
+ren v113 mothedct
+sort year country person
+save "H:\ECON509\ISSP - raw data\stata6\work\issp\1988a.dta", replace
+use "H:\ECON509\ISSP - raw data\stata6\work\issp\1989.dta", clear
+drop v4-v84 v88 v91-v95 v99 v102-v107 v109-v111 v114-v121 v124-v126 v129 v132-v154
+lab drop _all
+replace v1=1989
+ren v1 year
+ren v2 person
+ren v3 country
+replace country=28 if country==10
+replace country=10 if country==11
+replace country=22 if country==12
+ren v85 gender
+ren v86 age
+ren v87 marstat
+ren v89 empstsv
+ren v90 condhrs
+ren v96 private
+ren v97 selfemp
+ren v98 union
+ren v100 school
+ren v101 edcat
+ren v108 relig
+ren v112 spsschl
+ren v113 spsedct
+ren v122 earn
+ren v123 earncat
+ren v127 fathschl
+ren v128 fathedct
+ren v130 mothschl
+ren v131 mothedct
+sort year country person
+save "H:\ECON509\ISSP - raw data\stata6\work\issp\1989a.dta", replace
+use "H:\ECON509\ISSP - raw data\stata6\work\issp\1990.dta", clear
+drop v4-v58 v62 v65-v70 v73-v76 v78 v79 v82-v87 v89-v91 v94-v100 v103-v105 v108 v111-v142
+lab drop _all
+replace v1=1990
+ren v1 year
+ren v2 person
+ren v3 country
+drop if country==8
+replace country=27 if country==3
+replace country=3 if country==4
+replace country=28 if country==5
+replace country=4 if country==6
+replace country=6 if country==7
+replace country=22 if country==11
+ren v59 gender
+ren v60 age
+ren v61 marstat
+ren v63 empstsv
+ren v64 condhrs
+ren v71 private
+ren v72 selfemp
+ren v77 union
+ren v80 school
+ren v81 edcat
+ren v88 relig
+ren v92 spsschl
+ren v93 spsedct
+ren v101 earn
+ren v102 earncat
+ren v106 fathschl
+ren v107 fathedct
+ren v109 mothschl
+ren v110 mothedct
+sort year country person
+save "H:\ECON509\ISSP - raw data\stata6\work\issp\1990a.dta", replace
+use "H:\ECON509\ISSP - raw data\stata6\work\issp\1991.dta", clear
+drop v4-v76 v80 v83-v88 v91-v94 v96 v97 v100-v105 v107-v109 v112-v118 v121-v123 v126 v129-v154
+lab drop _all
+replace v1=1991
+ren v1 year
+ren v2 person
+ren v3 country
+replace country=27 if country==2
+replace country=2 if country==1
+replace country=28 if country==4
+replace country=4 if country==5
+replace country=5 if country==11
+replace country=21 if country==15
+replace country=15 if country==13
+replace country=22 if country==14
+replace country=1 if country==18
+replace country=18 if country==17
+drop if country==1
+drop if country==9
+ren v77 gender
+ren v78 age
+ren v79 marstat
+ren v81 empstsv
+ren v82 condhrs
+ren v89 private
+ren v90 selfemp
+ren v95 union
+ren v98 school
+ren v99 edcat
+ren v106 relig
+ren v110 spsschl
+ren v111 spsedct
+ren v119 earn
+ren v120 earncat
+ren v124 fathschl
+ren v125 fathedct
+ren v127 mothschl
+ren v128 mothedct
+sort year country person
+save "H:\ECON509\ISSP - raw data\stata6\work\issp\1991a.dta", replace
+use "H:\ECON509\ISSP - raw data\stata6\work\issp\1992.dta", clear
+drop v4-v98 i100 v106-cz108 v111-rp111 v113-cdn116 v119-nz122 v124-rp137 v142-rp142 v145-n181
+lab drop _all
+replace v1=1992
+ren v1 year
+ren v2 person
+ren v3 country
+replace country=27 if country==3
+replace country=3 if country==4
+replace country=4 if country==5
+replace country=5 if country==6
+replace country=6 if country==7
+replace country=20 if country==11
+replace country=19 if country==17
+replace country=21 if country==18
+replace country=17 if country==14
+replace country=18 if country==15
+replace country=15 if country==13
+replace country=13 if country==10
+replace country=10 if country==9
+ren v99 gender
+ren v100 age
+ren v101 marstat
+ren v102 school
+replace i102=5 if i102==1
+replace i102=7 if i102==2
+replace i102=8 if i102==3
+replace i102=10 if i102==4
+replace i102=13 if i102==5
+replace i102=15 if i102==6
+replace i102=18 if i102==7
+replace i102=20 if i102==8
+replace school=i102 if school==.
+drop i102
+replace v103=d103 if v103==.
+replace v103=gb103 if v103==.
+replace v103=usa103 if v103==.
+replace v103=a103 if v103==.
+replace v103=h103 if v103==.
+replace v103=i103 if v103==.
+replace v103=n103 if v103==.
+replace v103=s103 if v103==.
+replace v103=slo103 if v103==.
+replace v103=rus103 if v103==.
+replace v103=nz103 if v103==.
+replace v103=cdn103 if v103==.
+replace v103=rp103 if v103==.
+drop d103 gb103 usa103 a103 h103 i103 n103 s103 slo103 rus103 nz103 cdn103 rp103
+ren v103 edcat
+ren v104 empstsv
+ren v105 condhrs
+replace i105=5 if i105==1
+replace i105=15 if i105==2
+replace i105=25 if i105==3
+replace i105=33 if i105==4
+replace i105=37 if i105==5
+replace i105=40 if i105==6
+replace i105=45 if i105==7
+replace i105=55 if i105==8
+replace i105=65 if i105==9
+replace condhrs=i105 if condhrs==.
+drop i105
+ren v109 private
+ren v110 selfemp
+ren v112 union
+ren aus117 earn
+replace earn=d117 if earn==.
+replace earn=usa117 if earn==.
+replace earn=h117 if earn==.
+replace earn=s117 if earn==.
+replace earn=cz117 if earn==.
+replace earn=slo117 if earn==.
+replace earn=pl117 if earn==.
+replace earn=bg117 if earn==.
+replace earn=rus117 if earn==.
+replace earn=rp117 if earn==.
+drop d117 usa117 h117 s117 cz117 slo117 pl117 bg117 rus117 rp117
+ren aus118 earncat
+replace earncat=d118 if earncat==.
+replace earncat=gb118 if earncat==.
+replace earncat=usa118 if earncat==.
+replace earncat=a118 if earncat==.
+replace earncat=i118 if earncat==.
+replace earncat=n118 if earncat==.
+replace earncat=s118 if earncat==.
+replace earncat=slo118 if earncat==.
+replace earncat=pl118 if earncat==.
+replace earncat=rus118 if earncat==.
+replace earncat=nz118 if earncat==.
+replace earncat=cdn118 if earncat==.
+drop d118 gb118 usa118 a118 i118 n118 s118 slo118 pl118 rus118 nz118 cdn118
+ren v123 relig
+ren v138 spsschl
+replace v139=d139 if v139==.
+replace v139=usa139 if v139==.
+replace v139=a139 if v139==.
+replace v139=h139 if v139==.
+replace v139=i139 if v139==.
+replace v139=slo139 if v139==.
+drop d139 usa139 a139 h139 i139 slo139
+ren v139 spsedct
+ren v140 fathschl
+replace v141=d141 if v141==.
+replace v141=usa141 if v141==.
+replace v141=a141 if v141==.
+replace v141=h141 if v141==.
+replace v141=slo141 if v141==.
+drop d141 usa141 a141 h141 slo141
+ren v141 fathedct
+ren v143 mothschl
+replace v144=d144 if v144==.
+replace v144=usa144 if v144==.
+replace v144=a144 if v144==.
+replace v144=h144 if v144==.
+replace v144=slo144 if v144==.
+drop d144 usa144 a144 h144 slo144
+ren v144 mothedct
+sort year country person
+save "H:\ECON509\ISSP - raw data\stata6\work\issp\1992a.dta", replace
+use "H:\ECON509\ISSP - raw data\stata6\work\issp\1993.dta", clear
+drop v4-v109 v203 v213-v219 v222 v223 v225-v230 v253-v275 v277 v278 v280-v419
+lab drop _all
+replace v1=1993
+ren v1 year
+ren v2 person
+ren v3 country
+replace country=27 if country==3
+replace country=3 if country==4
+replace country=28 if country==5
+replace country=4 if country==6
+replace country=6 if country==8
+replace country=8 if country==9
+replace country=9 if country==10
+replace country=7 if country==11
+replace country=10 if country==12
+replace country=12 if country==14
+replace country=14 if country==13
+replace country=24 if country==23
+replace country=23 if country==22
+replace country=22 if country==21
+replace country=21 if country==20
+replace country=99 if country==16
+replace country=16 if country==18
+replace country=18 if country==17
+replace country=17 if country==99
+drop if country==1
+ren v200 gender
+ren v201 age
+ren v202 marstat
+ren v204 school
+ren v205 edcat
+ren v206 spsschl
+ren v207 spsedct
+ren v208 mothschl
+ren v209 mothedct
+ren v210 fathschl
+ren v211 fathedct
+ren v212 empstsv
+ren v220 private
+ren v221 selfemp
+ren v224 condhrs
+ren v231 earn
+replace v232=v233 if v232==.
+replace v232=v234 if v232==.
+replace v232=v235 if v232==.
+replace v232=v236 if v232==.
+replace v232=v237 if v232==.
+replace v232=v238 if v232==.
+replace v232=v239 if v232==.
+replace v232=v240 if v232==.
+replace v232=v241 if v232==.
+replace v232=v242 if v232==.
+replace v232=v243 if v232==.
+replace v232=v244 if v232==.
+replace v232=v245 if v232==.
+replace v232=v246 if v232==.
+replace v232=v247 if v232==.
+replace v232=v248 if v232==.
+replace v232=v249 if v232==.
+replace v232=v250 if v232==.
+replace v232=v251 if v232==.
+replace v232=v252 if v232==.
+drop v233-v252
+ren v232 earncat
+ren v276 relig
+ren v279 union
+sort year country person
+save "H:\ECON509\ISSP - raw data\stata6\work\issp\1993a.dta", replace
+use "H:\ECON509\ISSP - raw data\stata6\work\issp\1994.dta", clear
+drop v4-v80 v203 v207-v211 v214 v216 v218 v220 v221 v223-v315
+lab drop _all
+replace v1=1994
+ren v1 year
+ren v2 person
+ren v3 country
+replace country=27 if country==3
+replace country=3 if country==4
+replace country=28 if country==5
+replace country=4 if country==6
+replace country=5 if country==7
+replace country=6 if country==8
+replace country=8 if country==9
+replace country=9 if country==10
+replace country=7 if country==11
+replace country=10 if country==12
+replace country=12 if country==15
+replace country=15 if country==16
+replace country=16 if country==19
+replace country=19 if country==20
+ren v200 gender
+ren v201 age
+ren v202 marstat
+ren v204 school
+ren v205 edcat
+ren v206 empstsv
+ren v212 private
+ren v213 selfemp
+ren v215 condhrs
+ren v217 earn
+ren v219 relig
+ren v222 union
+sort year country person
+save "H:\ECON509\ISSP - raw data\stata6\work\issp\1994a.dta", replace
+use "H:\ECON509\ISSP - raw data\stata6\work\issp\1995.dta", clear
+drop v4-v71 v203 v207-v211 v214 v216 v241-v264 v266 v267 v269-v342
+lab drop _all
+replace v1=1995
+ren v1 year
+ren v2 person
+ren v3 country
+replace country=27 if country==3
+replace country=3 if country==4
+replace country=4 if country==6
+replace country=5 if country==7
+replace country=6 if country==8
+replace country=8 if country==9
+replace country=9 if country==10
+replace country=7 if country==11
+replace country=10 if country==12
+replace country=12 if country==15
+replace country=15 if country==16
+replace country=16 if country==19
+replace country=19 if country==20
+ren v200 gender
+ren v201 age
+ren v202 marstat
+ren v204 school
+ren v205 edcat
+ren v206 empstsv
+ren v212 private
+ren v213 selfemp
+ren v215 condhrs
+ren v217 earn
+replace v218=v219 if v218==.
+replace v218=v220 if v218==.
+replace v218=v221 if v218==.
+replace v218=v222 if v218==.
+replace v218=v223 if v218==.
+replace v218=v224 if v218==.
+replace v218=v225 if v218==.
+replace v218=v226 if v218==.
+replace v218=v227 if v218==.
+replace v218=v228 if v218==.
+replace v218=v229 if v218==.
+replace v218=v230 if v218==.
+replace v218=v231 if v218==.
+replace v218=v232 if v218==.
+replace v218=v233 if v218==.
+replace v218=v234 if v218==.
+replace v218=v235 if v218==.
+replace v218=v236 if v218==.
+replace v218=v237 if v218==.
+replace v218=v238 if v218==.
+replace v218=v239 if v218==.
+replace v218=v240 if v218==.
+drop v219-v240
+ren v218 earncat
+ren v265 relig
+ren v268 union
+sort year country person
+save "H:\ECON509\ISSP - raw data\stata6\work\issp\1995a.dta", replace
+use "H:\ECON509\ISSP - raw data\stata6\work\issp\1996.dta", clear
+drop v4-v68 v203 v207-v211 v214 v216 v218 v220-v221 v223-v325
+lab drop _all
+replace v1=1996
+ren v1 year
+ren v2 person
+ren v3 country
+replace country=27 if country==3
+replace country=3 if country==4
+replace country=4 if country==6
+replace country=5 if country==7
+replace country=6 if country==8
+replace country=8 if country==9
+replace country=9 if country==10
+replace country=7 if country==11
+replace country=10 if country==12
+replace country=12 if country==15
+replace country=15 if country==16
+replace country=16 if country==19
+replace country=19 if country==20
+replace country=22 if country==23
+replace country=23 if country==24
+replace country=24 if country==25
+replace country=25 if country==26
+replace country=29 if country==27
+replace country=30 if country==28
+replace country=11 if country==30
+ren v200 gender /* sex */
+ren v201 age /* age */
+ren v202 marstat /* marital status */
+ren v204 school /* years in school */
+ren v205 edcat /* education categories */
+ren v206 empstsv /* current employment status */
+ren v212 private /* working for privat - public sector */
+ren v213 selfemp /* self-employed */
+ren v215 condhrs /* hours worked weekly */
+ren v217 earn /* earnings */
+ren v219 relig /* religious denomination */
+ren v222 union /* trade union membership */
+/* check for below
+ren v106 fathschl /* father's years of schooling */
+ren v107 fathedct /* father's education category */
+ren v109 mothschl /* father's years of schooling */
+ren v110 mothedct /* father's education category */ */
+sort year country person
+save "H:\ECON509\ISSP - raw data\stata6\work\issp\1996a.dta", replace
+use "H:\ECON509\ISSP - raw data\stata6\work\issp\1997.dta", clear
+keep v1-v3 sex age marital educyrs degree wrkst spwrkst wrkgovt selfemp wrkhrs bg_rinc bup_rinc cdn_rinc ch_rinc cy_rinc cz_rinc d_rinc dk_rinc e_rinc f_rinc gb_rinc h_rinc i_rinc ila_rinc ilj_rinc j_rinc n_rinc nz_rinc p_rinc pl_rinc rp_rinc rus_rinc s_rinc slo_rinc usa_rinc ila_relg nz_relg rp_relg usa_relg union  
+lab drop _all
+replace v1=1997
+ren v1 year
+ren v2 person
+ren v3 country
+replace country=27 if country==3
+replace country=3 if country==4
+replace country=4 if country==6
+replace country=6 if country==8
+replace country=8 if country==9
+replace country=7 if country==11
+replace country=10 if country==12
+replace country=12 if country==15
+replace country=15 if country==16
+replace country=16 if country==19
+replace country=19 if country==20
+replace country=22 if country==23
+replace country=23 if country==24
+replace country=24 if country==25
+replace country=29 if country==27
+replace country=30 if country==28
+replace country=31 if country==29
+replace country=32 if country==30
+replace country=11 if country==31
+replace country=33 if country==32
+drop if country==1
+drop if country==5
+drop if country==7
+drop if country==9
+drop if country==11
+drop if country==26
+drop if country==28
+ren sex gender /* sex */
+/* age */
+ren marital marstat /* marital status */
+ren educyrs school /* years in school */
+ren degree edcat /* education categories */
+ren wrkst empstsv /* current employment status */
+ren wrkgovt private /* working for privat - public sector */
+/* self-employed */
+ren wrkhrs condhrs /* hours worked weekly */
+ /* earnings */
+ren bg_rinc earncat/* earning category */
+replace earncat=bup_rinc if earncat==.
+replace earncat=cdn_rinc if earncat==.
+replace earncat=ch_rinc if earncat==.
+replace earncat=cy_rinc if earncat==.
+replace earncat=cz_rinc if earncat==.
+replace earncat=d_rinc if earncat==.
+replace earncat=dk_rinc if earncat==.
+replace earncat=e_rinc if earncat==.
+replace earncat=f_rinc if earncat==.
+replace earncat=gb_rinc if earncat==.
+replace earncat=h_rinc if earncat==.
+replace earncat=i_rinc if earncat==.
+replace earncat=ila_rinc if earncat==.
+replace earncat=ilj_rinc if earncat==.
+replace earncat=j_rinc if earncat==.
+replace earncat=n_rinc if earncat==.
+replace earncat=nz_rinc if earncat==.
+replace earncat=p_rinc if earncat==.
+replace earncat=pl_rinc if earncat==.
+replace earncat=rp_rinc if earncat==.
+replace earncat=rus_rinc if earncat==.
+replace earncat=s_rinc if earncat==.
+replace earncat=slo_rinc if earncat==.
+replace earncat=usa_rinc if earncat==.
+drop bup_rinc cdn_rinc ch_rinc cy_rinc cz_rinc d_rinc dk_rinc e_rinc f_rinc gb_rinc h_rinc i_rinc ila_rinc ilj_rinc j_rinc n_rinc nz_rinc p_rinc pl_rinc rp_rinc rus_rinc s_rinc slo_rinc usa_rinc
+ren ila_relg relig /* religious denomination */
+replace relig=nz_relg if relig==.
+replace relig=rp_relg if relig==.
+replace relig=usa_relg if relig==.
+drop nz_relg rp_relg usa_relg
+/* trade union membership */
+/* /* check for below */
+ren v106 fathschl /* father's years of schooling */
+ren v107 fathedct /* father's education category */
+ren v109 mothschl /* father's years of schooling */
+ren v110 mothedct /* father's education category */ */
+sort year country person
+save "H:\ECON509\ISSP - raw data\stata6\work\issp\1997a.dta", replace
+use "H:\ECON509\ISSP - raw data\stata6\work\issp\1998.dta", clear
+drop v4-v79 v203 v207-v209 v212 v214 v216 v218 v219 v221-v331
+lab drop _all
+replace v1=1998
+ren v1 year
+ren v2 person
+ren v3 country
+replace country=27 if country==3
+replace country=3 if country==4
+replace country=28 if country==5
+replace country=4 if country==6
+replace country=5 if country==7
+replace country=6 if country==8
+replace country=8 if country==9
+replace country=9 if country==10
+replace country=7 if country==11
+replace country=10 if country==12
+replace country=12 if country==15
+replace country=15 if country==16
+replace country=16 if country==19
+replace country=19 if country==20
+replace country=23 if country==24
+replace country=24 if country==25
+replace country=25 if country==26
+replace country=26 if country==27
+replace country=29 if country==28
+replace country=30 if country==29
+replace country=31 if country==30
+replace country=11 if country==33
+ren v200 gender /* sex */
+ren v201 age /* age */
+ren v202 marstat /* marital status */
+ren v204 school /* years in school */
+ren v205 edcat /* education categories */
+ren v206 empstsv /* current employment status */
+ren v210 private /* working for privat - public sector */
+ren v211 selfemp /* self-employed */
+ren v213 condhrs /* hours worked weekly */
+ren v215 earn /* earnings */
+ren v217 relig /* religious denomination */
+ren v220 union /* trade union membership */
+/* check for below
+ren v106 fathschl /* father's years of schooling */
+ren v107 fathedct /* father's education category */
+ren v109 mothschl /* father's years of schooling */
+ren v110 mothedct /* father's education category */ */
+sort year country person
+save "H:\ECON509\ISSP - raw data\stata6\work\issp\1998a.dta", replace
+use "H:\ECON509\ISSP - raw data\stata6\work\issp\1999.dta", clear
+keep v1-v3 v65 v66 sex age marital educyrs degree wrkst spwrkst wrkgovt selfemp wrkhrs relig union rincome
+lab drop _all
+replace v1=1999
+ren v1 year
+ren v2 person
+ren v3 country
+replace country=27 if country==3
+replace country=3 if country==4
+replace country=28 if country==5
+replace country=4 if country==6
+replace country=5 if country==7
+replace country=6 if country==8
+replace country=10 if country==12
+replace country=12 if country==15
+replace country=15 if country==16
+replace country=16 if country==19
+replace country=19 if country==20
+replace country=23 if country==24
+replace country=24 if country==25
+replace country=25 if country==26
+replace country=29 if country==27
+replace country=30 if country==28
+replace country=31 if country==29
+replace country=34 if country==30
+replace country=26 if country==33
+ren sex gender /* sex */
+/* age */
+ren marital marstat /* marital status */
+ren educyrs school /* years in school */
+ren degree edcat /* education categories */
+ren wrkst empstsv /* current employment status */
+ren wrkgovt private /* working for privat - public sector */
+/* self-employed */
+ren wrkhrs condhrs /* hours worked weekly */
+/* earnings */
+ren rincome earncat/* earning category */
+ /* religious denomination */
+/* trade union membership */
+ /* check for below */
+/* father's years of schooling */
+ren v65 fathedct /* father's education category */
+ /* mother's years of schooling */
+ren v66 mothedct /* mother's education category */
+sort year country person
+save "H:\ECON509\ISSP - raw data\stata6\work\issp\1999a.dta", replace
+use "H:\ECON509\ISSP - raw data\stata6\work\issp\2000.dta", clear
+drop v4-v81 v203 v206-v230 v233-v234 v237 v239 v241 v243-v244 v246-v327
+lab drop _all
+replace v1=2000
+ren v1 year
+ren v2 person
+ren v3 country
+replace country=27 if country==3
+replace country=3 if country==4
+replace country=28 if country==5
+replace country=4 if country==6
+replace country=5 if country==7
+replace country=6 if country==8
+replace country=8 if country==9
+replace country=9 if country==10
+replace country=7 if country==11
+replace country=10 if country==12
+replace country=12 if country==15
+replace country=15 if country==16
+replace country=16 if country==19
+replace country=19 if country==20
+replace country=23 if country==24
+replace country=24 if country==25
+replace country=25 if country==26
+replace country=31 if country==30
+replace country=34 if country==31
+replace country=11 if country==33
+replace country=35 if country==37
+replace country=36 if country==38
+ren v200 gender /* sex */
+ren v201 age /* age */
+ren v202 marstat /* marital status */
+ren v204 school /* years in school */
+ren v205 edcat /* education categories */
+ren v231 empstsv /* current employment status */
+ren v235 private /* working for privat - public sector */
+ren v236 selfemp /* self-employed */
+ren v238 condhrs /* hours worked weekly */
+ren v240 earn/* earnings */
+/* earning category */
+ren v242 relig /* religious denomination */
+ren v245 union/* trade union membership */
+ /* check for below */
+/* father's years of schooling */
+ /* father's education category */
+ /* mother's years of schooling */
+/* mother's education category */
+sort year country person
+save "H:\ECON509\ISSP - raw data\stata6\work\issp\2000a.dta", replace
+use "H:\ECON509\ISSP - raw data\stata6\work\issp\2001.dta", clear
+keep V1-V3 sex age marital educyrs degree wrkst spwrkst wrkgovt selfemp wrkhrs relig union A_RINC ZA_RINC AUS_RINC BR_RINC CDN_RINC CH_RINC CY_RINC CZ_RINC D_RINC DK_RINC E_RINC F_RINC SF_RINC GB_RINC H_RINC IL_RINC J_RINC LV_RINC N_RINC NI_RINC NZ_RINC PL_RINC RCH_RINC RP_RINC RUS_RINC SLO_RINC USA_RINC
+lab drop _all
+replace V1=2001
+ren V1 year
+ren V2 person
+ren V3 country
+replace country=27 if country==3
+replace country=3 if country==4
+replace country=28 if country==5
+replace country=4 if country==6
+replace country=5 if country==7
+replace country=6 if country==8
+replace country=8 if country==9
+replace country=9 if country==10
+replace country=7 if country==11
+replace country=10 if country==12
+replace country=12 if country==15
+replace country=15 if country==16
+replace country=16 if country==19
+replace country=19 if country==20
+replace country=22 if country==23
+replace country=23 if country==24
+replace country=24 if country==25
+replace country=25 if country==26
+replace country=26 if country==27
+replace country=29 if country==28
+replace country=30 if country==29
+replace country=31 if country==30
+replace country=34 if country==31
+replace country=11 if country==33
+replace country=33 if country==34
+replace country=37 if country==35
+replace country=38 if country==36
+replace country=35 if country==37
+ren sex gender/* sex */
+ /* age */
+ren marital marstat /* marital status */
+ren educyrs school /* years in school */
+ren degree edcat /* education categories */
+ren wrkst empstsv /* current employment status */
+ren wrkgovt private /* working for privat - public sector */
+/* self-employed */
+ren wrkhrs condhrs /* hours worked weekly */
+/* earnings */
+ren A_RINC earncat/* earning category */
+replace earncat=ZA_RINC if earncat==.
+replace earncat=AUS_RINC if earncat==.
+replace earncat=BR_RINC if earncat==.
+replace earncat=CDN_RINC if earncat==.
+replace earncat=CH_RINC if earncat==.
+replace earncat=CY_RINC if earncat==.
+replace earncat=CZ_RINC if earncat==.
+replace earncat=D_RINC if earncat==.
+replace earncat=DK_RINC if earncat==.
+replace earncat=E_RINC if earncat==.
+replace earncat=F_RINC if earncat==.
+replace earncat=SF_RINC if earncat==.
+replace earncat=GB_RINC if earncat==.
+replace earncat=H_RINC if earncat==.
+replace earncat=IL_RINC if earncat==.
+replace earncat=J_RINC if earncat==.
+replace earncat=LV_RINC if earncat==.
+replace earncat=N_RINC if earncat==.
+replace earncat=NI_RINC if earncat==.
+replace earncat=NZ_RINC if earncat==.
+replace earncat=PL_RINC if earncat==.
+replace earncat=RCH_RINC if earncat==.
+replace earncat=RP_RINC if earncat==.
+replace earncat=RUS_RINC if earncat==.
+replace earncat=SLO_RINC if earncat==.
+replace earncat=USA_RINC if earncat==.
+drop ZA_RINC AUS_RINC BR_RINC CDN_RINC CH_RINC CY_RINC CZ_RINC D_RINC DK_RINC E_RINC F_RINC SF_RINC GB_RINC H_RINC IL_RINC J_RINC LV_RINC N_RINC NI_RINC NZ_RINC PL_RINC RCH_RINC RP_RINC RUS_RINC SLO_RINC USA_RINC
+drop if country==7
+drop if country==8
+drop if country==9
+drop if country==13
+drop if country==17
+drop if country==20
+drop if country==25
+drop if country==26
+drop if country==31
+drop if country==33
+drop if country==36
+ /* religious denomination */
+/* trade union membership */
+ /* check for below */
+/* father's years of schooling */
+ /* father's education category */
+ /* mother's years of schooling */
+/* mother's education category */
+sort year country person
+save "H:\ECON509\ISSP - raw data\stata6\work\issp\2001a.dta", replace
+use "H:\ECON509\ISSP - raw data\stata6\work\issp\2002.dta", clear
+drop v2 C_ALPHAN v4-v69 v71 v203 v206-v238 v241 v243 v244 v246-v248 v250-v287 v289-v361
+lab drop _all
+replace v1=2002
+ren v1 year
+ren v3 person
+ren COUNTRY country
+replace country=27 if country==3
+replace country=3 if country==4
+replace country=28 if country==5
+replace country=4 if country==6
+replace country=5 if country==7
+replace country=6 if country==8
+replace country=9 if country==10
+replace country=7 if country==11
+replace country=10 if country==12
+replace country=12 if country==15
+replace country=15 if country==16
+replace country=16 if country==19
+replace country=23 if country==24
+replace country=24 if country==25
+replace country=25 if country==26
+replace country=26 if country==27
+replace country=29 if country==28
+replace country=30 if country==29
+replace country=31 if country==30
+replace country=34 if country==31
+replace country=11 if country==33
+replace country=39 if country==34
+replace country=37 if country==35
+replace country=35 if country==37
+replace country=36 if country==38
+replace country=40 if country==39
+ren v200 gender /* sex */
+ren v201 age /* age */
+ren v202 marstat /* marital status */
+ren v204 school /* years in school */
+ren v205 edcat /* education categories */
+ren v239 empstsv /* current employment status */
+ren v242 selfemp /* working for privat - public sector */
+/* self-employed */
+ren v240 condhrs /* hours worked weekly */
+ren v249 earn/* earnings */
+/* earning category */
+ren v288 relig/* religious denomination */
+ren v245 union/* trade union membership */
+ren v70 spsedct
+ /* check for below */
+/* father's years of schooling */
+ /* father's education category */
+ /* mother's years of schooling */
+/* mother's education category */
+sort year country person
+save "H:\ECON509\ISSP - raw data\stata6\work\issp\2002a.dta", replace
+use "H:\ECON509\ISSP - raw data\stata6\work\issp\2003.dta", clear
+keep v1 V3 COUNTRY sex age marital educyrs degree wrkst wrkhrs wrktype union rincome relig
+lab drop _all
+replace v1=2003
+ren v1 year
+ren V3 person
+ren COUNTRY country
+replace country=27 if country==3
+replace country=3 if country==4
+replace country=4 if country==6
+replace country=5 if country==7
+replace country=6 if country==8
+replace country=9 if country==10
+replace country=7 if country==11
+replace country=10 if country==12
+replace country=12 if country==15
+replace country=15 if country==16
+replace country=16 if country==19
+replace country=19 if country==20
+replace country=22 if country==23
+replace country=23 if country==24
+replace country=24 if country==25
+replace country=25 if country==26
+replace country=26 if country==27
+replace country=29 if country==28
+replace country=31 if country==30
+replace country=34 if country==31
+replace country=11 if country==33
+replace country=41 if country==36
+replace country=35 if country==37
+replace country=38 if country==40
+replace country=40 if country==41
+ren sex gender/* sex */
+ /* age */
+ren marital marstat /* marital status */
+ren educyrs school /* years in school */
+ren degree edcat /* education categories */
+ren wrkst empstsv /* current employment status */
+/* working for privat - public sector */
+ren wrktype selfemp/* self-employed */
+ren wrkhrs condhrs /* hours worked weekly */
+ren rincome earn/* earnings */
+/* earning category */
+ /* religious denomination */
+/* trade union membership */
+ /* check for below */
+/* father's years of schooling */
+ /* father's education category */
+ /* mother's years of schooling */
+/* mother's education category */
+sort year country person
+save "H:\ECON509\ISSP - raw data\stata6\work\issp\2003a.dta", replace
+use "H:\ECON509\ISSP - raw data\stata6\work\issp\2004.dta", clear
+drop v2 C_ALPHAN V4-V69 v203 v206-v243 v246 v248-v249 v251-v253 v255-v297 v299-v381
+lab drop _all
+replace v1=2004
+ren v1 year
+ren v3 person
+ren COUNTRY country
+replace country=27 if country==3
+replace country=3 if country==4
+replace country=4 if country==6
+replace country=5 if country==7
+replace country=6 if country==8
+replace country=8 if country==9
+replace country=9 if country==10
+replace country=7 if country==11
+replace country=10 if country==12
+replace country=12 if country==15
+replace country=15 if country==16
+replace country=16 if country==19
+replace country=19 if country==20
+replace country=23 if country==24
+replace country=24 if country==25
+replace country=25 if country==26
+replace country=26 if country==27
+replace country=29 if country==28
+replace country=30 if country==29
+replace country=31 if country==30
+replace country=34 if country==31
+replace country=11 if country==33
+replace country=39 if country==34
+replace country=37 if country==35
+replace country=41 if country==36
+replace country=35 if country==37
+replace country=36 if country==38
+replace country=40 if country==39
+replace country=38 if country==40
+replace country=42 if country==41
+replace country=43 if country==42
+ren v200 gender /* sex */
+ren v201 age /* age */
+ren v202 marstat /* marital status */
+ren v204 school /* years in school */
+ren v205 edcat /* education categories */
+ren v244 empstsv /* current employment status */
+ren v247 selfemp /* working for privat - public sector */
+/* self-employed */
+ren v245 condhrs /* hours worked weekly */
+ren v254 earn/* earnings */
+/* earning category */
+ren v298 relig/* religious denomination */
+ren v250 union/* trade union membership */
+ /* check for below */
+/* father's years of schooling */
+ /* father's education category */
+ /* mother's years of schooling */
+/* mother's education category */
+sort year country person
+save "H:\ECON509\ISSP - raw data\stata6\work\issp\2004a.dta", replace
+use "H:\ECON509\ISSP - raw data\stata6\work\issp\2005.dta", clear
+keep V1 V3 COUNTRY SEX AGE MARITAL EDUCYRS DEGREE WRKST WRKHRS WRKTYPE UNION RELIG AU_RINC BG_RINC CA_RINC CH_RINC CY_RINC CZ_RINC DE_RINC DK_RINC DO_RINC ES_RINC FI_RINC BE_RINC FR_RINC GB_RINC HU_RINC IE_RINC IL_RINC JP_RINC KR_RINC LV_RINC MX_RINC NL_RINC NO_RINC NZ_RINC PH_RINC PT_RINC RU_RINC SE_RINC SI_RINC TW_RINC US_RINC ZA_RINC
+lab drop _all
+replace V1=2005
+ren V1 year
+ren V3 person
+ren COUNTRY country
+replace country=27 if country==3
+replace country=3 if country==4
+replace country=4 if country==6
+replace country=6 if country==8
+replace country=9 if country==10
+replace country=7 if country==11
+replace country=10 if country==12
+replace country=12 if country==15
+replace country=16 if country==19
+replace country=19 if country==20
+replace country=23 if country==24
+replace country=24 if country==25
+replace country=25 if country==26
+replace country=26 if country==27
+replace country=29 if country==28
+replace country=30 if country==29
+replace country=31 if country==30
+replace country=11 if country==33
+replace country=35 if country==37
+replace country=36 if country==38
+replace country=40 if country==39
+replace country=38 if country==40
+replace country=42 if country==41
+replace country=44 if country==43
+ren SEX gender /* sex */
+ren AGE age /* age */
+ren MARITAL marstat /* marital status */
+ren EDUCYRS school /* years in school */
+ren DEGREE edcat /* education categories */
+ren WRKST empstsv /* current employment status */
+ren WRKTYPE selfemp /* working for privat - public sector */
+/* self-employed */
+ren WRKHRS condhrs /* hours worked weekly */
+/* earnings */
+ren AU_RINC earncat/* earning category */
+replace earncat=BG_RINC if earncat==.
+replace earncat=CA_RINC if earncat==.
+replace earncat=CH_RINC if earncat==.
+replace earncat=CY_RINC if earncat==.
+replace earncat=CZ_RINC if earncat==.
+replace earncat=DE_RINC if earncat==.
+replace earncat=DK_RINC if earncat==.
+replace earncat=DO_RINC if earncat==.
+replace earncat=ES_RINC if earncat==.
+replace earncat=FI_RINC if earncat==.
+replace earncat=BE_RINC if earncat==.
+replace earncat=FR_RINC if earncat==.
+replace earncat=GB_RINC if earncat==.
+replace earncat=HU_RINC if earncat==.
+replace earncat=IE_RINC if earncat==.
+replace earncat=IL_RINC if earncat==.
+replace earncat=JP_RINC if earncat==.
+replace earncat=KR_RINC if earncat==.
+replace earncat=LV_RINC if earncat==.
+replace earncat=MX_RINC if earncat==.
+replace earncat=NL_RINC if earncat==.
+replace earncat=NO_RINC if earncat==.
+replace earncat=NZ_RINC if earncat==.
+replace earncat=PH_RINC if earncat==.
+replace earncat=PT_RINC if earncat==.
+replace earncat=RU_RINC if earncat==.
+replace earncat=SE_RINC if earncat==.
+replace earncat=SI_RINC if earncat==.
+replace earncat=TW_RINC if earncat==.
+replace earncat=US_RINC if earncat==.
+replace earncat=ZA_RINC if earncat==.
+drop BG_RINC CA_RINC CH_RINC CY_RINC CZ_RINC DE_RINC DK_RINC DO_RINC ES_RINC FI_RINC BE_RINC FR_RINC GB_RINC HU_RINC IE_RINC IL_RINC JP_RINC KR_RINC LV_RINC MX_RINC NL_RINC NO_RINC NZ_RINC PH_RINC PT_RINC RU_RINC SE_RINC SI_RINC TW_RINC US_RINC ZA_RINC
+drop if country==5
+drop if country==8
+drop if country==15
+drop if country==20
+drop if country==26
+drop if country==28
+drop if country==33
+drop if country==34
+drop if country==37
+drop if country==41
+drop if country==43
+ren RELIG relig 
+/*religious denomination */
+ren UNION union  /* trade union membership */
+ /* check for below */
+/* father's years of schooling */
+ /* father's education category */
+ /* mother's years of schooling */
+/* mother's education category */
+sort year country person
+save "H:\ECON509\ISSP - raw data\stata6\work\issp\2005a.dta", replace
+use "H:\ECON509\ISSP - raw data\stata6\work\issp\2006.dta", clear
+keep V1 V2 V3 sex age marital educyrs degree wrkst wrkhrs wrktype union AU_RINC CA_RINC CH_RINC CL_RINC CZ_RINC DE_RINC DK_RINC DO_RINC ES_RINC FI_RINC FR_RINC GB_RINC HR_RINC HU_RINC IE_RINC IL_RINC JP_RINC KR_RINC LV_RINC NL_RINC NO_RINC NZ_RINC PH_RINC PL_RINC PT_RINC RU_RINC SE_RINC SI_RINC TW_RINC US_RINC UY_RINC VE_RINC ZA_RINC relig
+lab drop _all
+replace V1=2006
+ren V1 year
+ren V2 person
+ren V3 country
+replace country=1 if country==36
+replace country=19 if country==124
+replace country=34 if country==152
+replace country=40 if country==158
+replace country=45 if country==191
+replace country=14 if country==203
+replace country=32 if country==208
+replace country=44 if country==214
+replace country=35 if country==246
+replace country=29 if country==250
+replace country=2 if country==276.1
+replace country=2 if country==276.2
+replace country=6 if country==348
+replace country=9 if country==372
+replace country=22 if country==376.1
+replace country=22 if country==376
+replace country=23 if country==392
+replace country=42 if country==410
+replace country=25 if country==428
+replace country=7 if country==528
+replace country=16 if country==554
+replace country=10 if country==578
+replace country=21 if country==608
+replace country=15 if country==616
+replace country=31 if country==620
+replace country=18 if country==643
+replace country=12 if country==705
+replace country=38 if country==710
+replace country=24 if country==724
+replace country=13 if country==752
+replace country=11 if country==756
+replace country=3 if country==826.1
+replace country=4 if country==840
+replace country=43 if country==858
+replace country=41 if country==862
+
+ren sex gender /* sex */
+/* age */
+ren marital marstat /* marital status */
+ren educyrs school /* years in school */
+ren degree edcat /* education categories */
+ren wrkst empstsv /* current employment status */
+ren wrktype selfemp /* working for privat - public sector */
+/* self-employed */
+ren wrkhrs condhrs /* hours worked weekly */
+/* earnings */
+ren AU_RINC earncat /* earning category */
+replace earncat=CA_RINC if earncat==.
+replace earncat=CH_RINC if earncat==.
+replace earncat=CL_RINC if earncat==.
+replace earncat=CZ_RINC if earncat==.
+replace earncat=DE_RINC if earncat==.
+replace earncat=DK_RINC if earncat==.
+replace earncat=DO_RINC if earncat==.
+replace earncat=ES_RINC if earncat==.
+replace earncat=FI_RINC if earncat==.
+replace earncat=FR_RINC if earncat==.
+replace earncat=GB_RINC if earncat==.
+replace earncat=HR_RINC if earncat==.
+replace earncat=HU_RINC if earncat==.
+replace earncat=IE_RINC if earncat==.
+replace earncat=IL_RINC if earncat==.
+replace earncat=JP_RINC if earncat==.
+replace earncat=KR_RINC if earncat==.
+replace earncat=LV_RINC if earncat==.
+replace earncat=NL_RINC if earncat==.
+replace earncat=NO_RINC if earncat==.
+replace earncat=NZ_RINC if earncat==.
+replace earncat=PH_RINC if earncat==.
+replace earncat=PL_RINC if earncat==.
+replace earncat=PT_RINC if earncat==.
+replace earncat=RU_RINC if earncat==.
+replace earncat=SE_RINC if earncat==.
+replace earncat=SI_RINC if earncat==.
+replace earncat=TW_RINC if earncat==.
+replace earncat=US_RINC if earncat==.
+replace earncat=UY_RINC if earncat==.
+replace earncat=VE_RINC if earncat==.
+replace earncat=ZA_RINC if earncat==.
+drop CA_RINC CH_RINC CL_RINC CZ_RINC DE_RINC DK_RINC DO_RINC ES_RINC FI_RINC FR_RINC GB_RINC HR_RINC HU_RINC IE_RINC IL_RINC JP_RINC KR_RINC LV_RINC NL_RINC NO_RINC NZ_RINC PH_RINC PL_RINC PT_RINC RU_RINC SE_RINC SI_RINC TW_RINC US_RINC UY_RINC VE_RINC ZA_RINC
+drop if earncat==.
+
+/*religious denomination */
+ /* trade union membership */
+ /* check for below */
+/* father's years of schooling */
+ /* father's education category */
+ /* mother's years of schooling */
+/* mother's education category */
+sort year country person
+save "H:\ECON509\ISSP - raw data\stata6\work\issp\2006a.dta", replace
+use "H:\ECON509\ISSP - raw data\stata6\work\issp\2007.dta", clear
+keep V1 V3 V4 sex age marital educyrs degree wrkst wrkhrs wrktype union relig AR_RINC AT_RINC AU_RINC BG_RINC CH_RINC CL_RINC CY_RINC CZ_RINC DE_RINC DO_RINC FI_RINC FLA_RINC FR_RINC GB_RINC HR_RINC HU_RINC IE_RINC IL_RINC JP_RINC KR_RINC LV_RINC MX_RINC NO_RINC NZ_RINC PH_RINC PL_RINC RU_RINC SE_RINC SI_RINC SK_RINC TW_RINC US_RINC UY_RINC ZA_RINC
+lab drop _all
+replace V1=2007
+ren V1 year
+ren V3 person
+ren V4 country
+replace country=46 if country==32
+replace country=1 if country==36
+replace country=5 if country==40
+replace country=39 if country==56.1
+replace country=17 if country==100
+replace country=34 if country==152
+replace country=40 if country==158
+replace country=45 if country==191
+replace country=30 if country==196
+replace country=14 if country==203
+replace country=44 if country==214
+replace country=35 if country==246
+replace country=29 if country==250
+replace country=2 if country==276.1
+replace country=2 if country==276.2
+replace country=6 if country==348
+replace country=9 if country==372
+replace country=22 if country==376.1
+replace country=22 if country==376.2
+replace country=23 if country==392
+replace country=42 if country==410
+replace country=25 if country==428
+replace country=36 if country==484
+replace country=16 if country==554
+replace country=10 if country==578
+replace country=21 if country==608
+replace country=15 if country==616
+replace country=18 if country==643
+replace country=26 if country==703
+replace country=12 if country==705
+replace country=38 if country==710
+replace country=24 if country==724
+replace country=13 if country==752
+replace country=11 if country==756
+replace country=3 if country==826.1
+replace country=4 if country==840
+replace country=43 if country==858
+
+ren sex gender /* sex */
+/* age */
+ren marital marstat /* marital status */
+ren educyrs school /* years in school */
+ren degree edcat /* education categories */
+ren wrkst empstsv /* current employment status */
+ren wrktype selfemp /* working for privat - public sector */
+/* self-employed */
+ren wrkhrs condhrs /* hours worked weekly */
+/* earnings */
+ren AR_RINC earncat /* earning category */
+replace earncat=AT_RINC if earncat==.
+replace earncat=AU_RINC if earncat==.
+replace earncat=BG_RINC if earncat==.
+replace earncat=CH_RINC if earncat==.
+replace earncat=CL_RINC if earncat==.
+replace earncat=CY_RINC if earncat==.
+replace earncat=CZ_RINC if earncat==.
+replace earncat=DE_RINC if earncat==.
+replace earncat=DO_RINC if earncat==.
+replace earncat=FI_RINC if earncat==.
+replace earncat=FLA_RINC if earncat==.
+replace earncat=FR_RINC if earncat==.
+replace earncat=GB_RINC if earncat==.
+replace earncat=HR_RINC if earncat==.
+replace earncat=HU_RINC if earncat==.
+replace earncat=IE_RINC if earncat==.
+replace earncat=IL_RINC if earncat==.
+replace earncat=JP_RINC if earncat==.
+replace earncat=KR_RINC if earncat==.
+replace earncat=LV_RINC if earncat==.
+replace earncat=MX_RINC if earncat==.
+replace earncat=NO_RINC if earncat==.
+replace earncat=NZ_RINC if earncat==.
+replace earncat=PH_RINC if earncat==.
+replace earncat=PL_RINC if earncat==.
+replace earncat=RU_RINC if earncat==.
+replace earncat=SE_RINC if earncat==.
+replace earncat=SI_RINC if earncat==.
+replace earncat=SK_RINC if earncat==.
+replace earncat=TW_RINC if earncat==.
+replace earncat=US_RINC if earncat==.
+replace earncat=UY_RINC if earncat==.
+replace earncat=ZA_RINC if earncat==.
+drop if earncat==.
+drop AT_RINC AU_RINC BG_RINC CH_RINC CL_RINC CY_RINC CZ_RINC DE_RINC DO_RINC FI_RINC FLA_RINC FR_RINC GB_RINC HR_RINC HU_RINC IE_RINC IL_RINC JP_RINC KR_RINC LV_RINC MX_RINC NO_RINC NZ_RINC PH_RINC PL_RINC RU_RINC SE_RINC SI_RINC SK_RINC TW_RINC US_RINC UY_RINC ZA_RINC
+
+/*religious denomination */
+ /* trade union membership */
+ /* check for below */
+/* father's years of schooling */
+ /* father's education category */
+ /* mother's years of schooling */
+/* mother's education category */
+sort year country person
+save "H:\ECON509\ISSP - raw data\stata6\work\issp\2007a.dta", replace
+use "H:\ECON509\ISSP - raw data\stata6\work\issp\2008.dta", clear
+keep V1 V3 V4 SEX AGE MARITAL EDUCYRS DEGREE WRKST WRKHRS WRKTYPE UNION RELIG AU_RINC BE_RINC CH_RINC CL_RINC CY_RINC CZ_RINC DE_RINC DK_RINC DO_RINC ES_RINC FI_RINC FR_RINC GB_RINC HR_RINC HU_RINC IE_RINC IL_RINC IT_RINC JP_RINC KR_RINC LV_RINC MX_RINC NIR_RINC NL_RINC NO_RINC NZ_RINC PH_RINC PL_RINC PT_RINC RU_RINC SE_RINC SI_RINC SK_RINC TR_RINC TW_RINC UA_RINC US_RINC UY_RINC VE_RINC ZA_RINC
+lab drop _all
+replace V1=2008
+ren V1 year
+ren V3 person
+ren V4 country
+
+replace country=1 if country==36
+replace country=5 if country==40
+replace country=39 if country==56.1
+replace country=34 if country==152
+replace country=40 if country==158
+replace country=45 if country==191
+replace country=30 if country==196
+replace country=14 if country==203
+replace country=32 if country==208
+replace country=44 if country==214
+replace country=35 if country==246
+replace country=29 if country==250
+replace country=2 if country==276.1
+replace country=27 if country==276.2
+replace country=6 if country==348
+replace country=9 if country==372
+replace country=22 if country==376.1
+replace country=22 if country==376.2
+replace country=8 if country==380.1
+replace country=8 if country==380.2
+replace country=23 if country==392
+replace country=42 if country==410
+replace country=25 if country==428
+replace country=36 if country==484
+replace country=7 if country==528
+replace country=16 if country==554
+replace country=10 if country==578
+replace country=21 if country==608
+replace country=15 if country==616
+replace country=31 if country==620
+replace country=18 if country==643
+replace country=26 if country==703
+replace country=12 if country==705
+replace country=38 if country==710
+replace country=24 if country==724
+replace country=13 if country==752
+replace country=11 if country==756
+replace country=47 if country==792
+replace country=48 if country==804
+replace country=3 if country==826.1
+replace country=28 if country==826.2
+replace country=4 if country==840
+replace country=43 if country==858
+replace country=41 if country==862
+
+ren SEX gender /* sex */
+ren AGE age /* age */
+ren MARITAL marstat /* marital status */
+ren EDUCYRS school /* years in school */
+ren DEGREE edcat /* education categories */
+ren WRKST empstsv /* current employment status */
+ren WRKTYPE selfemp /* working for privat - public sector */
+/* self-employed */
+ren WRKHRS condhrs /* hours worked weekly */
+/* earnings */
+ren AU_RINC earncat /* earning category */
+replace earncat=BE_RINC if earncat==. | earncat==.n
+replace earncat=CH_RINC if earncat==. | earncat==.n
+replace earncat=CL_RINC if earncat==. | earncat==.n
+replace earncat=CY_RINC if earncat==. | earncat==.n
+replace earncat=CZ_RINC if earncat==. | earncat==.n
+replace earncat=DE_RINC if earncat==. | earncat==.n
+replace earncat=DK_RINC if earncat==. | earncat==.n
+replace earncat=DO_RINC if earncat==. | earncat==.n
+replace earncat=ES_RINC if earncat==. | earncat==.n
+replace earncat=FI_RINC if earncat==. | earncat==.n
+replace earncat=FR_RINC if earncat==. | earncat==.n
+replace earncat=GB_RINC if earncat==. | earncat==.n
+replace earncat=HR_RINC if earncat==. | earncat==.n
+replace earncat=HU_RINC if earncat==. | earncat==.n
+replace earncat=IE_RINC if earncat==. | earncat==.n
+replace earncat=IL_RINC if earncat==. | earncat==.n
+replace earncat=IT_RINC if earncat==. | earncat==.n
+replace earncat=JP_RINC if earncat==. | earncat==.n
+replace earncat=KR_RINC if earncat==. | earncat==.n
+replace earncat=LV_RINC if earncat==. | earncat==.n
+replace earncat=MX_RINC if earncat==. | earncat==.n
+replace earncat=NIR_RINC if earncat==. | earncat==.n
+replace earncat=NL_RINC if earncat==. | earncat==.n
+replace earncat=NO_RINC if earncat==. | earncat==.n
+replace earncat=NZ_RINC if earncat==. | earncat==.n
+replace earncat=PH_RINC if earncat==. | earncat==.n
+replace earncat=PL_RINC if earncat==. | earncat==.n
+replace earncat=PT_RINC if earncat==. | earncat==.n
+replace earncat=RU_RINC if earncat==. | earncat==.n
+replace earncat=SE_RINC if earncat==. | earncat==.n
+replace earncat=SI_RINC if earncat==. | earncat==.n
+replace earncat=SK_RINC if earncat==. | earncat==.n
+replace earncat=TR_RINC if earncat==. | earncat==.n
+replace earncat=TW_RINC if earncat==. | earncat==.n
+replace earncat=US_RINC if earncat==. | earncat==.n
+replace earncat=UA_RINC if earncat==. | earncat==.n
+replace earncat=UY_RINC if earncat==. | earncat==.n
+replace earncat=VE_RINC if earncat==. | earncat==.n
+replace earncat=ZA_RINC if earncat==. | earncat==.n
+drop BE_RINC CH_RINC CL_RINC CY_RINC CZ_RINC DE_RINC DK_RINC DO_RINC ES_RINC FI_RINC FR_RINC GB_RINC HR_RINC HU_RINC IE_RINC IL_RINC IT_RINC JP_RINC KR_RINC LV_RINC MX_RINC NIR_RINC NL_RINC NO_RINC NZ_RINC PH_RINC PL_RINC PT_RINC RU_RINC SE_RINC SI_RINC SK_RINC TR_RINC TW_RINC UA_RINC US_RINC UY_RINC VE_RINC ZA_RINC
+ren RELIG relig/*religious denomination */
+ren UNION union /* trade union membership */
+ /* check for below */
+/* father's years of schooling */
+ /* father's education category */
+ /* mother's years of schooling */
+/* mother's education category */
+sort year country person
+save "H:\ECON509\ISSP - raw data\stata6\work\issp\2008a.dta", replace
+use "H:\ECON509\ISSP - raw data\stata6\work\issp\2009.dta", clear
+keep V1 V3 V4 SEX AGE MARITAL EDUCYRS DEGREE WRKST WRKHRS WRKTYPE UNION RELIG AR_RINC AT_RINC AU_RINC BE_RINC BG_RINC CL_RINC CN_RINC CY_RINC CZ_RINC CH_RINC DE_RINC DK_RINC EE_RINC ES_RINC FI_RINC FR_RINC GB_RINC HR_RINC HU_RINC IL_RINC IS_RINC IT_RINC JP_RINC KR_RINC LV_RINC NO_RINC NZ_RINC PH_RINC PL_RINC PT_RINC RU_RINC SE_RINC SI_RINC SK_RINC TR_RINC TW_RINC UA_RINC US_RINC VE_RINC ZA_RINC
+lab drop _all
+replace V1=2009
+ren V1 year
+ren V3 person
+ren V4 country
+
+replace country=46 if country==32
+replace country=1 if country==36
+replace country=5 if country==40
+replace country=39 if country==56.1
+replace country=17 if country==100
+replace country=34 if country==152
+replace country=49 if country==156
+replace country=40 if country==158
+replace country=45 if country==191
+replace country=30 if country==196
+replace country=14 if country==203
+replace country=32 if country==208
+replace country=50 if country==233
+replace country=35 if country==246
+replace country=29 if country==250
+replace country=2 if country==276.1
+replace country=27 if country==276.2
+replace country=6 if country==348
+replace country=51 if country==352
+replace country=22 if country==376
+replace country=8 if country==380
+replace country=23 if country==392
+replace country=42 if country==410
+replace country=25 if country==428
+replace country=16 if country==554
+replace country=10 if country==578
+replace country=21 if country==608
+replace country=15 if country==616
+replace country=31 if country==620
+replace country=18 if country==643
+replace country=26 if country==703
+replace country=12 if country==705
+replace country=38 if country==710
+replace country=24 if country==724
+replace country=13 if country==752
+replace country=11 if country==756
+replace country=47 if country==792
+replace country=48 if country==804
+replace country=3 if country==826.1
+replace country=4 if country==840
+replace country=41 if country==862
+
+ren SEX gender /* sex */
+ren AGE age /* age */
+ren MARITAL marstat /* marital status */
+ren EDUCYRS school /* years in school */
+ren DEGREE edcat /* education categories */
+ren WRKST empstsv /* current employment status */
+ren WRKTYPE selfemp /* working for privat - public sector */
+/* self-employed */
+ren WRKHRS condhrs /* hours worked weekly */
+/* earnings */
+ren AR_RINC earncat /* earning category */
+replace earncat=AT_RINC if earncat==. | earncat==.a
+replace earncat=AU_RINC if earncat==. | earncat==.a
+replace earncat=BE_RINC if earncat==. | earncat==.a
+replace earncat=BG_RINC if earncat==. | earncat==.a
+replace earncat=CL_RINC if earncat==. | earncat==.a
+replace earncat=CN_RINC if earncat==. | earncat==.a
+replace earncat=CY_RINC if earncat==. | earncat==.a
+replace earncat=CZ_RINC if earncat==. | earncat==.a
+replace earncat=CH_RINC if earncat==. | earncat==.a
+replace earncat=DE_RINC if earncat==. | earncat==.a
+replace earncat=DK_RINC if earncat==. | earncat==.a
+replace earncat=EE_RINC if earncat==. | earncat==.a
+replace earncat=ES_RINC if earncat==. | earncat==.a
+replace earncat=FI_RINC if earncat==. | earncat==.a
+replace earncat=FR_RINC if earncat==. | earncat==.a
+replace earncat=GB_RINC if earncat==. | earncat==.a
+replace earncat=HR_RINC if earncat==. | earncat==.a
+replace earncat=HU_RINC if earncat==. | earncat==.a
+replace earncat=IL_RINC if earncat==. | earncat==.a
+replace earncat=IS_RINC if earncat==. | earncat==.a
+replace earncat=IT_RINC if earncat==. | earncat==.a
+replace earncat=JP_RINC if earncat==. | earncat==.a
+replace earncat=KR_RINC if earncat==. | earncat==.a
+replace earncat=LV_RINC if earncat==. | earncat==.a
+replace earncat=NO_RINC if earncat==. | earncat==.a
+replace earncat=NZ_RINC if earncat==. | earncat==.a
+replace earncat=PH_RINC if earncat==. | earncat==.a
+replace earncat=PL_RINC if earncat==. | earncat==.a
+replace earncat=PT_RINC if earncat==. | earncat==.a
+replace earncat=RU_RINC if earncat==. | earncat==.a
+replace earncat=SE_RINC if earncat==. | earncat==.a
+replace earncat=SI_RINC if earncat==. | earncat==.a
+replace earncat=SK_RINC if earncat==. | earncat==.a
+replace earncat=TR_RINC if earncat==. | earncat==.a
+replace earncat=TW_RINC if earncat==. | earncat==.a
+replace earncat=US_RINC if earncat==. | earncat==.a
+replace earncat=UA_RINC if earncat==. | earncat==.a
+replace earncat=VE_RINC if earncat==. | earncat==.a
+replace earncat=ZA_RINC if earncat==. | earncat==.a
+drop AT_RINC AU_RINC BE_RINC BG_RINC CL_RINC CN_RINC CY_RINC CZ_RINC CH_RINC DE_RINC DK_RINC EE_RINC ES_RINC FI_RINC FR_RINC GB_RINC HR_RINC HU_RINC IL_RINC IS_RINC IT_RINC JP_RINC KR_RINC LV_RINC NO_RINC NZ_RINC PH_RINC PL_RINC PT_RINC RU_RINC SE_RINC SI_RINC SK_RINC TR_RINC TW_RINC UA_RINC US_RINC VE_RINC ZA_RINC
+drop if earncat==.
+ren RELIG relig/*religious denomination */
+ren UNION union /* trade union membership */
+ /* check for below */
+/* father's years of schooling */
+ /* father's education category */
+ /* mother's years of schooling */
+/* mother's education category */
+sort year country person
+save "H:\ECON509\ISSP - raw data\stata6\work\issp\2009a.dta", replace
+use "H:\ECON509\ISSP - raw data\stata6\work\issp\2010.dta", clear
+keep V1 V3 V4 SEX AGE MARITAL EDUCYRS DEGREE WORK WRKHRS EMPREL UNION RELIGGRP AR_RINC AT_RINC BE_RINC BG_RINC CA_RINC CH_RINC CL_RINC CZ_RINC DE_RINC DK_RINC ES_RINC FI_RINC FR_RINC GB_RINC HR_RINC IL_RINC JP_RINC KR_RINC LT_RINC LV_RINC MX_RINC NO_RINC NZ_RINC PH_RINC RU_RINC SE_RINC SI_RINC SK_RINC TR_RINC TW_RINC US_RINC ZA_RINC
+lab drop _all
+replace V1=2010
+ren V1 year
+ren V3 person
+ren V4 country
+
+replace country=46 if country==32
+replace country=5 if country==40
+replace country=39 if country==56
+replace country=39 if country==56.1
+replace country=17 if country==100
+replace country=19 if country==124
+replace country=34 if country==152
+replace country=40 if country==158
+replace country=45 if country==191
+replace country=14 if country==203
+replace country=32 if country==208
+replace country=35 if country==246
+replace country=29 if country==250
+replace country=2 if country==276.1
+replace country=27 if country==276.2
+replace country=22 if country==376.1
+replace country=22 if country==376.2
+replace country=22 if country==376
+replace country=23 if country==392
+replace country=42 if country==410
+replace country=25 if country==428
+replace country=52 if country==440
+replace country=36 if country==484
+replace country=16 if country==554
+replace country=10 if country==578
+replace country=21 if country==608
+replace country=18 if country==643
+replace country=26 if country==703
+replace country=12 if country==705
+replace country=38 if country==710
+replace country=24 if country==724
+replace country=13 if country==752
+replace country=11 if country==756
+replace country=47 if country==792
+replace country=3 if country==826.1
+replace country=4 if country==840
+
+ren SEX gender /* sex */
+ren AGE age /* age */
+ren MARITAL marstat /* marital status */
+ren EDUCYRS school /* years in school */
+ren DEGREE edcat /* education categories */
+ren WORK empstsv /* current employment status */
+ren EMPREL selfemp /* working for privat - public sector */
+/* self-employed */
+ren WRKHRS condhrs /* hours worked weekly */
+/* earnings */
+ren AR_RINC earncat /* earning category */
+replace earncat=AT_RINC if earncat==. | earncat==.n | earncat==.a
+replace earncat=BE_RINC if earncat==. | earncat==.n | earncat==.a
+replace earncat=BG_RINC if earncat==. | earncat==.n | earncat==.a
+replace earncat=CA_RINC if earncat==. | earncat==.n | earncat==.a
+replace earncat=CH_RINC if earncat==. | earncat==.n | earncat==.a
+replace earncat=CL_RINC if earncat==. | earncat==.n | earncat==.a
+replace earncat=CZ_RINC if earncat==. | earncat==.n | earncat==.a
+replace earncat=DE_RINC if earncat==. | earncat==.n | earncat==.a
+replace earncat=DK_RINC if earncat==. | earncat==.n | earncat==.a
+replace earncat=ES_RINC if earncat==. | earncat==.n | earncat==.a
+replace earncat=FI_RINC if earncat==. | earncat==.n | earncat==.a
+replace earncat=FR_RINC if earncat==. | earncat==.n | earncat==.a
+replace earncat=GB_RINC if earncat==. | earncat==.n | earncat==.a
+replace earncat=HR_RINC if earncat==. | earncat==.n | earncat==.a
+replace earncat=IL_RINC if earncat==. | earncat==.n | earncat==.a
+replace earncat=JP_RINC if earncat==. | earncat==.n | earncat==.a
+replace earncat=KR_RINC if earncat==. | earncat==.n | earncat==.a
+replace earncat=LT_RINC if earncat==. | earncat==.n | earncat==.a
+replace earncat=LV_RINC if earncat==. | earncat==.n | earncat==.a
+replace earncat=MX_RINC if earncat==. | earncat==.n | earncat==.a
+replace earncat=NO_RINC if earncat==. | earncat==.n | earncat==.a
+replace earncat=NZ_RINC if earncat==. | earncat==.n | earncat==.a
+replace earncat=PH_RINC if earncat==. | earncat==.n | earncat==.a
+replace earncat=RU_RINC if earncat==. | earncat==.n | earncat==.a
+replace earncat=SE_RINC if earncat==. | earncat==.n | earncat==.a
+replace earncat=SI_RINC if earncat==. | earncat==.n | earncat==.a
+replace earncat=SK_RINC if earncat==. | earncat==.n | earncat==.a
+replace earncat=TR_RINC if earncat==. | earncat==.n | earncat==.a
+replace earncat=TW_RINC if earncat==. | earncat==.n | earncat==.a
+replace earncat=US_RINC if earncat==. | earncat==.n | earncat==.a
+replace earncat=ZA_RINC if earncat==. | earncat==.n | earncat==.a
+drop AT_RINC BE_RINC BG_RINC CA_RINC CH_RINC CL_RINC CZ_RINC DE_RINC DK_RINC ES_RINC FI_RINC FR_RINC GB_RINC HR_RINC IL_RINC JP_RINC KR_RINC LT_RINC LV_RINC MX_RINC NO_RINC NZ_RINC PH_RINC RU_RINC SE_RINC SI_RINC SK_RINC TR_RINC TW_RINC US_RINC ZA_RINC
+drop if earncat==.
+ren RELIGGRP relig/*religious denomination */
+ren UNION union /* trade union membership */
+ /* check for below */
+/* father's years of schooling */
+ /* father's education category */
+ /* mother's years of schooling */
+/* mother's education category */
+sort year country person
+save "H:\ECON509\ISSP - raw data\stata6\work\issp\2010a.dta", replace
+use "H:\ECON509\ISSP - raw data\stata6\work\issp\2011.dta", clear
+keep V1 V3 V4 SEX AGE MARITAL EDUCYRS DEGREE WORK WRKHRS EMPREL UNION RELIGGRP AU_RINC BG_RINC BE_RINC CH_RINC CL_RINC CZ_RINC DE_RINC DK_RINC FI_RINC FR_RINC GB_RINC HR_RINC IL_RINC JP_RINC KR_RINC LT_RINC NL_RINC NO_RINC PH_RINC PL_RINC PT_RINC RU_RINC SE_RINC SI_RINC SK_RINC TR_RINC TW_RINC US_RINC ZA_RINC
+lab drop _all
+replace V1=2011
+ren V1 year
+ren V3 person
+ren V4 country
+
+replace country=1 if country==36
+replace country=39 if country==56
+replace country=17 if country==100
+replace country=34 if country==152
+replace country=40 if country==158
+replace country=45 if country==191
+replace country=14 if country==203
+replace country=32 if country==208
+replace country=35 if country==246
+replace country=29 if country==250
+replace country=22 if country==376
+replace country=23 if country==392
+replace country=42 if country==410
+replace country=52 if country==440
+replace country=36 if country==484
+replace country=7 if country==528
+replace country=10 if country==578
+replace country=21 if country==608
+replace country=15 if country==616
+replace country=31 if country==620
+replace country=18 if country==643
+replace country=26 if country==703
+replace country=12 if country==705
+replace country=38 if country==710
+replace country=13 if country==752
+replace country=11 if country==756
+replace country=47 if country==792
+replace country=4 if country==840
+replace country=39 if country==5601
+replace country=39 if country==5602
+replace country=2 if country==27601
+replace country=27 if country==27602
+replace country=3 if country==82601
+
+ren SEX gender /* sex */
+ren AGE age /* age */
+ren MARITAL marstat /* marital status */
+ren EDUCYRS school /* years in school */
+ren DEGREE edcat /* education categories */
+ren WORK empstsv /* current employment status */
+ren EMPREL selfemp /* working for privat - public sector */
+/* self-employed */
+ren WRKHRS condhrs /* hours worked weekly */
+/* earnings */
+ren AU_RINC earncat /* earning category */
+replace earncat=BE_RINC if earncat==. | earncat==.n | earncat==.a
+replace earncat=BG_RINC if earncat==. | earncat==.n | earncat==.a
+replace earncat=CH_RINC if earncat==. | earncat==.n | earncat==.a
+replace earncat=CL_RINC if earncat==. | earncat==.n | earncat==.a
+replace earncat=CZ_RINC if earncat==. | earncat==.n | earncat==.a
+replace earncat=DE_RINC if earncat==. | earncat==.n | earncat==.a
+replace earncat=DK_RINC if earncat==. | earncat==.n | earncat==.a
+replace earncat=FI_RINC if earncat==. | earncat==.n | earncat==.a
+replace earncat=FR_RINC if earncat==. | earncat==.n | earncat==.a
+replace earncat=GB_RINC if earncat==. | earncat==.n | earncat==.a
+replace earncat=HR_RINC if earncat==. | earncat==.n | earncat==.a
+replace earncat=IL_RINC if earncat==. | earncat==.n | earncat==.a
+replace earncat=JP_RINC if earncat==. | earncat==.n | earncat==.a
+replace earncat=KR_RINC if earncat==. | earncat==.n | earncat==.a
+replace earncat=LT_RINC if earncat==. | earncat==.n | earncat==.a
+replace earncat=NL_RINC if earncat==. | earncat==.n | earncat==.a
+replace earncat=NO_RINC if earncat==. | earncat==.n | earncat==.a
+replace earncat=PH_RINC if earncat==. | earncat==.n | earncat==.a
+replace earncat=PL_RINC if earncat==. | earncat==.n | earncat==.a
+replace earncat=PT_RINC if earncat==. | earncat==.n | earncat==.a
+replace earncat=RU_RINC if earncat==. | earncat==.n | earncat==.a
+replace earncat=SE_RINC if earncat==. | earncat==.n | earncat==.a
+replace earncat=SI_RINC if earncat==. | earncat==.n | earncat==.a
+replace earncat=SK_RINC if earncat==. | earncat==.n | earncat==.a
+replace earncat=TR_RINC if earncat==. | earncat==.n | earncat==.a
+replace earncat=TW_RINC if earncat==. | earncat==.n | earncat==.a
+replace earncat=US_RINC if earncat==. | earncat==.n | earncat==.a
+replace earncat=ZA_RINC if earncat==. | earncat==.n | earncat==.a
+drop BG_RINC BE_RINC CH_RINC CL_RINC CZ_RINC DE_RINC DK_RINC FI_RINC FR_RINC GB_RINC HR_RINC IL_RINC JP_RINC KR_RINC LT_RINC NL_RINC NO_RINC PH_RINC PL_RINC PT_RINC RU_RINC SE_RINC SI_RINC SK_RINC TR_RINC TW_RINC US_RINC ZA_RINC
+drop if earncat==.
+ren RELIGGRP relig/*religious denomination */
+ren UNION union /* trade union membership */
+ /* check for below */
+/* father's years of schooling */
+ /* father's education category */
+ /* mother's years of schooling */
+/* mother's education category */
+sort year country person
+save "H:\ECON509\ISSP - raw data\stata6\work\issp\2011a.dta", replace
+use "H:\ECON509\ISSP - raw data\stata6\work\issp\2012.dta", clear
+keep V1 V3 V4 V65 SEX AGE MARITAL EDUCYRS DEGREE WORK WRKHRS EMPREL UNION RELIGGRP AR_RINC AT_RINC AU_RINC BG_RINC CA_RINC CH_RINC CL_RINC CN_RINC CZ_RINC DE_RINC DK_RINC ES_RINC FI_RINC FR_RINC GB_RINC HR_RINC IE_RINC IL_RINC IN_RINC IS_RINC JP_RINC KR_RINC LT_RINC LV_RINC MX_RINC NO_RINC PH_RINC PL_RINC RU_RINC SE_RINC SI_RINC SK_RINC TR_RINC TW_RINC US_RINC VE_RINC ZA_RINC
+lab drop _all
+replace V1=2012
+ren V1 year
+ren V3 person
+ren V4 country
+
+replace country=46 if country==32
+replace country=1 if country==36
+replace country=5 if country==40
+replace country=17 if country==100
+replace country=19 if country==124
+replace country=34 if country==152
+replace country=49 if country==156
+replace country=40 if country==158
+replace country=45 if country==191
+replace country=14 if country==203
+replace country=32 if country==208
+replace country=35 if country==246
+replace country=29 if country==250
+replace country=51 if country==352
+replace country=53 if country==356
+replace country=9 if country==372
+replace country=22 if country==376
+replace country=23 if country==392
+replace country=42 if country==410
+replace country=25 if country==428
+replace country=52 if country==440
+replace country=36 if country==484
+replace country=10 if country==578
+replace country=21 if country==608
+replace country=15 if country==616
+replace country=18 if country==643
+replace country=26 if country==703
+replace country=12 if country==705
+replace country=38 if country==710
+replace country=24 if country==724
+replace country=13 if country==752
+replace country=11 if country==756
+replace country=47 if country==792
+replace country=4 if country==840
+replace country=41 if country==862
+replace country=2 if country==27601
+replace country=27 if country==27602
+replace country=3 if country==82601
+
+ren SEX gender /* sex */
+ren AGE age /* age */
+ren MARITAL marstat /* marital status */
+ren EDUCYRS school /* years in school */
+ren DEGREE edcat /* education categories */
+ren WORK empstsv /* current employment status */
+ren EMPREL selfemp /* working for privat - public sector */
+/* self-employed */
+ren WRKHRS condhrs /* hours worked weekly */
+/* earnings */
+ren AR_RINC earncat /* earning category */
+replace earncat=AT_RINC if earncat==999990 | earncat==9999999 | earncat==9999990
+replace earncat=AU_RINC if earncat==999990 | earncat==9999999 | earncat==9999990
+replace earncat=BG_RINC if earncat==999990 | earncat==9999999 | earncat==9999990
+replace earncat=CA_RINC if earncat==999990 | earncat==9999999 | earncat==9999990
+replace earncat=CH_RINC if earncat==999990 | earncat==9999999 | earncat==9999990
+replace earncat=CL_RINC if earncat==999990 | earncat==9999999 | earncat==9999990
+replace earncat=CN_RINC if earncat==999990 | earncat==9999999 | earncat==9999990
+replace earncat=CZ_RINC if earncat==999990 | earncat==9999999 | earncat==9999990
+replace earncat=DE_RINC if earncat==999990 | earncat==9999999 | earncat==9999990
+replace earncat=DK_RINC if earncat==999990 | earncat==9999999 | earncat==9999990
+replace earncat=ES_RINC if earncat==999990 | earncat==9999999 | earncat==9999990
+replace earncat=FI_RINC if earncat==999990 | earncat==9999999 | earncat==9999990
+replace earncat=FR_RINC if earncat==999990 | earncat==9999999 | earncat==9999990
+replace earncat=GB_RINC if earncat==999990 | earncat==9999999 | earncat==9999990
+replace earncat=HR_RINC if earncat==999990 | earncat==9999999 | earncat==9999990
+replace earncat=IE_RINC if earncat==999990 | earncat==9999999 | earncat==9999990
+replace earncat=IL_RINC if earncat==999990 | earncat==9999999 | earncat==9999990
+replace earncat=IN_RINC if earncat==999990 | earncat==9999999 | earncat==9999990
+replace earncat=IS_RINC if earncat==999990 | earncat==9999999 | earncat==9999990
+replace earncat=JP_RINC if earncat==999990 | earncat==9999999 | earncat==9999990
+replace earncat=KR_RINC if earncat==999990 | earncat==9999999 | earncat==9999990
+replace earncat=LT_RINC if earncat==999990 | earncat==9999999 | earncat==9999990
+replace earncat=LV_RINC if earncat==999990 | earncat==9999999 | earncat==9999990
+replace earncat=MX_RINC if earncat==999990 | earncat==9999999 | earncat==9999990
+replace earncat=NO_RINC if earncat==999990 | earncat==9999999 | earncat==9999990
+replace earncat=PH_RINC if earncat==999990 | earncat==9999999 | earncat==9999990
+replace earncat=PL_RINC if earncat==999990 | earncat==9999999 | earncat==9999990
+replace earncat=RU_RINC if earncat==999990 | earncat==9999999 | earncat==9999990
+replace earncat=SE_RINC if earncat==999990 | earncat==9999999 | earncat==9999990
+replace earncat=SI_RINC if earncat==999990 | earncat==9999999 | earncat==9999990
+replace earncat=SK_RINC if earncat==999990 | earncat==9999999 | earncat==9999990
+replace earncat=TR_RINC if earncat==999990 | earncat==9999999 | earncat==9999990
+replace earncat=TW_RINC if earncat==999990 | earncat==9999999 | earncat==9999990
+replace earncat=US_RINC if earncat==999990 | earncat==9999999 | earncat==9999990
+replace earncat=VE_RINC if earncat==999990 | earncat==9999999 | earncat==9999990
+replace earncat=ZA_RINC if earncat==999990 | earncat==9999999 | earncat==9999990
+drop AT_RINC AU_RINC BG_RINC CA_RINC CH_RINC CL_RINC CN_RINC CZ_RINC DE_RINC DK_RINC ES_RINC FI_RINC FR_RINC GB_RINC HR_RINC IE_RINC IL_RINC IN_RINC IS_RINC JP_RINC KR_RINC LT_RINC LV_RINC MX_RINC NO_RINC PH_RINC PL_RINC RU_RINC SE_RINC SI_RINC SK_RINC TR_RINC TW_RINC US_RINC VE_RINC ZA_RINC
+drop if earncat==.
+ren RELIGGRP relig/*religious denomination */
+ren UNION union /* trade union membership */
+ren V65 spsedct
+ /* check for below */
+/* father's years of schooling */
+ /* father's education category */
+ /* mother's years of schooling */
+/* mother's education category */
+sort year country person
+save "H:\ECON509\ISSP - raw data\stata6\work\issp\2012a.dta", replace
+
+/* 2010-2012 do not have proper person variable */
+
+use "H:\ECON509\ISSP - raw data\stata6\work\issp\1985a.dta", clear
+merge year country person using "H:\ECON509\ISSP - raw data\stata6\work\issp\1986a.dta"
+drop _merge
+sort year country person
+merge year country person using "H:\ECON509\ISSP - raw data\stata6\work\issp\1987a.dta"
+drop _merge
+sort year country person
+merge year country person using "H:\ECON509\ISSP - raw data\stata6\work\issp\1988a.dta"
+drop _merge
+sort year country person
+merge year country person using "H:\ECON509\ISSP - raw data\stata6\work\issp\1989a.dta"
+drop _merge
+sort year country person
+merge year country person using "H:\ECON509\ISSP - raw data\stata6\work\issp\1990a.dta"
+drop _merge
+sort year country person
+merge year country person using "H:\ECON509\ISSP - raw data\stata6\work\issp\1991a.dta"
+drop _merge
+sort year country person
+merge year country person using "H:\ECON509\ISSP - raw data\stata6\work\issp\1992a.dta"
+drop _merge
+sort year country person
+merge year country person using "H:\ECON509\ISSP - raw data\stata6\work\issp\1993a.dta"
+drop _merge
+sort year country person
+merge year country person using "H:\ECON509\ISSP - raw data\stata6\work\issp\1994a.dta"
+drop _merge
+sort year country person
+merge year country person using "H:\ECON509\ISSP - raw data\stata6\work\issp\1995a.dta"
+drop _merge
+sort year country person
+merge year country person using "H:\ECON509\ISSP - raw data\stata6\work\issp\1996a.dta"
+drop _merge
+sort year country person
+merge year country person using "H:\ECON509\ISSP - raw data\stata6\work\issp\1997a.dta"
+drop _merge
+sort year country person
+merge year country person using "H:\ECON509\ISSP - raw data\stata6\work\issp\1998a.dta"
+drop _merge
+sort year country person
+merge year country person using "H:\ECON509\ISSP - raw data\stata6\work\issp\1999a.dta"
+drop _merge
+sort year country person
+merge year country person using "H:\ECON509\ISSP - raw data\stata6\work\issp\2000a.dta"
+drop _merge
+sort year country person
+merge year country person using "H:\ECON509\ISSP - raw data\stata6\work\issp\2001a.dta"
+drop _merge
+sort year country person
+merge year country person using "H:\ECON509\ISSP - raw data\stata6\work\issp\2002a.dta"
+drop _merge
+sort year country person
+merge year country person using "H:\ECON509\ISSP - raw data\stata6\work\issp\2003a.dta"
+drop _merge
+sort year country person
+merge year country person using "H:\ECON509\ISSP - raw data\stata6\work\issp\2004a.dta"
+drop _merge
+sort year country person
+merge year country person using "H:\ECON509\ISSP - raw data\stata6\work\issp\2005a.dta"
+drop _merge
+sort year country person
+merge year country person using "H:\ECON509\ISSP - raw data\stata6\work\issp\2006a.dta"
+drop _merge
+sort year country person
+merge year country person using "H:\ECON509\ISSP - raw data\stata6\work\issp\2007a.dta"
+drop _merge
+sort year country person
+merge year country person using "H:\ECON509\ISSP - raw data\stata6\work\issp\2008a.dta"
+drop _merge
+sort year country person
+merge year country person using "H:\ECON509\ISSP - raw data\stata6\work\issp\2009a.dta"
+drop _merge
+sort year country person
+merge year country person using "H:\ECON509\ISSP - raw data\stata6\work\issp\2010a.dta"
+drop _merge
+sort year country person
+merge year country person using "H:\ECON509\ISSP - raw data\stata6\work\issp\2011a.dta"
+drop _merge
+sort year country person
+merge year country person using "H:\ECON509\ISSP - raw data\stata6\work\issp\2012a.dta"
+drop _merge
+sort year country person
+drop spwrkst v232
+replace country=2 if country==276
+replace country=3 if country==826
+save "H:\ECON509\ISSP - raw data\stata6\work\issp\1985-2012.dta", replace
+
+use "H:\ECON509\ISSP - raw data\stata6\work\issp\1985-2012.dta", clear
+lab var year " year of study"
+lab def country 1 Australia 2 WGermany 3 GB 4 USA 5 Austria 6 Hungary 7 Netherlands 8 Italy 9 Ireland 10 Norway 11 Switzerland 12 Slovenia 13 Sweden 14 CzechRep 15 Poland 16 NewZealand 17 Bulgaria 18 Russia 19 Canada 20 Czechoslovakia 21 Philippines 22 Israel 23 Japan 24 Spain 25 Latvia 26 SlovakRep 27 EGermany 28 NIreland 29 France 30 Cyprus 31 Portugal 32 Denmark 33 Bangladesh 34 Chile 35 Finland 36 Mexico 37 Brazil 38 SAfrica 39 Belgium 40 Taiwan 41 Venezuela 42 SKorea 43 Uruguay 44 DominicanRep 45 Croatia 46 Argentina 47 Turkey 48 Ukraine 49 China 50 Estonia 51 Iceland 52 Lithuania 53 India 
+lab val country country
+gen female=1 if gender==2
+replace female=0 if gender==1
+lab var female " female dummy"
+drop gender
+drop if female==.
+gen married=1 if marstat==1
+replace married=0 if marstat<7 & marstat>1
+lab var married " married dummy"
+replace age=21 if age==1
+replace age=30 if age==2
+replace age=40 if age==3
+replace age=50 if age==4
+replace age=60 if age==5
+replace age=70 if age==6
+drop if age<18
+drop if age==.
+drop if age>100
+gen agesq=age*age
+lab var agesq " age squared"
+replace school=. if school>80
+drop if school==.
+gen xp=age-school
+lab var xp " experience"
+drop if xp<0
+gen xpsq=xp*xp
+lab var xpsq " experience squared"
+replace condhrs=. if year==1992 & country==6
+replace condhrs=. if year==1993 & country==6
+drop if condhrs>97
+drop if condhrs==.n
+lab var empstat " unemployed or employed"
+lab def empstat 1 unemployed 2 employed
+lab val empstat empstat
+replace empstat=2 if empstsv==1
+replace empstat=2 if empstsv==2
+replace empstat=1 if empstsv==5
+ren empstsv lfstat
+lab var lfstat " labor force status"
+replace lfstat=1 if lfstat==2
+replace lfstat=. if lfstat==3
+replace lfstat=. if lfstat==4
+replace lfstat=8 if lfstat==9
+replace lfstat=8 if lfstat==10
+lab def lfstat 1 employed 5 unemployed 6 student 7 retired 8 outoflf
+lab val lfstat lfstat
+drop if lfstat==6
+replace selfemp=1 if selfemp==2 & year<1990
+replace selfemp=1 if selfemp==3 & year==1987
+replace selfemp=1 if selfemp==4 & year>2001
+replace selfemp=. if selfemp==0 & year>2001
+replace selfemp=0 if selfemp>1 & selfemp<5 & year<2002
+replace selfemp=0 if selfemp>0 & selfemp<4 & year>2001
+replace selfemp=. if selfemp>7 & year>2001
+replace selfemp=. if selfemp==5 & year>2001
+replace selfemp=. if selfemp==6 & year>2001
+drop if selfemp==.a
+drop if selfemp==.n
+drop if selfemp==.
+lab var selfemp " self employed dummy"
+drop private
+replace union=0 if union==2 | union==3
+lab var union " union dummy"
+drop if country==2 & year==1994
+drop if country==17 & year==1994
+drop if country==19 & year==1994
+drop if country==27 & year==1994
+replace edcat=5 if edcat==3 & year>2001
+replace edcat=7 if edcat==5 & year>2001
+replace edcat=. if edcat>7
+lab def edcat 0 None 1 Lowest 2 IncompletePrimary 3 PrimaryCompleted 4 IncompleteSecondary 5 SecondaryCompleted 6 IncompleteUniversity 7 UniversityCompleted
+lab var edcat "completed education"
+replace earn=earncat*1000 if country==1 & year==1985
+replace earn=. if earn==99999 & country==2 & year<1996
+replace earn=. if earn==99997 & country==2& year<1996
+replace earn=. if earn==27500 & country==4 & year==1995
+replace earn=earn*1000 if country==6 & year==1992
+replace earn=earn/10 if country==8 & year==1994
+replace earn=earn*1000 if country==18 & year==1995 & earn<999996
+replace earn=10000000 if earn==999996 & earncat==18 & country==18 & year<1996
+replace earn=earn*10 if country==15 & year==1995
+gen earnings=earn & year<1996
+replace earnings=2500 if country==1 & earncat==1 & year==1987
+replace earnings=2500 if country==1 & earncat==1 & year==1990
+replace earnings=300 if earn==. & earncat==1 & country==2 & year<1996
+replace earnings=750 if earncat==2 & country==2 & year==1985
+replace earnings=1250 if earncat==3 & country==2 & year==1985
+replace earnings=1750 if earncat==4 & country==2 & year==1985
+replace earnings=2250 if earncat==5 & country==2 & year==1985
+replace earnings=2750 if earncat==6 & country==2 & year==1985
+replace earnings=3500 if earncat==7 & country==2 & year==1985
+replace earnings=4500 if earncat==8 & country==2 & year==1985
+replace earnings=5500 if earncat==9 & country==2 & year==1985
+replace earnings=6500 if earncat==10 & country==2 & year==1985
+replace earnings=500 if earn==. & earncat==2 & country==2 & year>1985 & year<1996
+replace earnings=700 if earn==. & earncat==3 & country==2 & year>1985 & year<1996
+replace earnings=900 if earn==. & earncat==4 & country==2 & year>1985 & year<1996
+replace earnings=1125 if earn==. & earncat==5 & country==2 & year>1985 & year<1996
+replace earnings=1375 if earn==. & earncat==6 & country==2 & year>1985 & year<1996
+replace earnings=1625 if earn==. & earncat==7 & country==2 & year>1985 & year<1996
+replace earnings=1875 if earn==. & earncat==8 & country==2 & year>1985 & year<1996
+replace earnings=2125 if earn==. & earncat==9 & country==2 & year>1985  & year<1996
+replace earnings=2375 if earn==. & earncat==10 & country==2 & year>1985 & year<1996
+replace earnings=2625 if earn==. & earncat==11 & country==2 & year<1996
+replace earnings=2875 if earn==. & earncat==12 & country==2 & year<1996
+replace earnings=3250 if earn==. & earncat==13 & country==2 & year<1996
+replace earnings=3750 if earn==. & earncat==14 & country==2 & year<1996
+replace earnings=4250 if earn==. & earncat==15 & country==2 & year<1996
+replace earnings=4750 if earn==. & earncat==16 & country==2 & year<1996
+replace earnings=5250 if earn==. & earncat==17 & country==2 & year<1996
+replace earnings=5750 if earn==. & earncat==18 & country==2 & year<1996
+replace earnings=7000 if earn==. & earncat==19 & country==2 & year<1996
+replace earnings=9000 if earn==. & earncat==20 & country==2 & year<1996
+replace earnings=12500 if earn==. & earncat==21 & country==2 & year<1996
+replace earnings=17500 if earn==. & earncat==22 & country==2 & year<1996
+replace earnings=1500 if country==3 & earncat==1 & year<1990
+replace earnings=2500 if country==3 & earncat==2 & year<1990
+replace earnings=3500 if country==3 & earncat==3 & year<1990
+replace earnings=4500 if country==3 & earncat==4 & year<1990
+replace earnings=5500 if country==3 & earncat==5 & year<1990
+replace earnings=6500 if country==3 & earncat==6 & year<1990
+replace earnings=7500 if country==3 & earncat==7 & year<1990
+replace earnings=9000 if country==3 & earncat==8 & year<1990
+replace earnings=11000 if country==3 & earncat==9 & year<1990
+replace earnings=13500 if country==3 & earncat==10 & year<1990
+replace earnings=16500 if country==3 & earncat==11 & year<1990
+replace earnings=19000 if country==3 & earncat==12 & year<1990
+replace earnings=21500 if country==3 & earncat==13 & year<1990
+replace earnings=24500 if country==3 & earncat==14 & year<1990
+replace earnings=2500 if country==3 & earncat==1 & year==1990
+replace earnings=3500 if country==3 & earncat==2 & year==1990
+replace earnings=4500 if country==3 & earncat==3 & year==1990
+replace earnings=5500 if country==3 & earncat==4 & year==1990
+replace earnings=6500 if country==3 & earncat==5 & year==1990
+replace earnings=7500 if country==3 & earncat==6 & year==1990
+replace earnings=9000 if country==3 & earncat==7 & year==1990
+replace earnings=11000 if country==3 & earncat==8 & year==1990
+replace earnings=13500 if country==3 & earncat==9 & year==1990
+replace earnings=16500 if country==3 & earncat==10 & year==1990
+replace earnings=19000 if country==3 & earncat==11 & year==1990
+replace earnings=21500 if country==3 & earncat==12 & year==1990
+replace earnings=24500 if country==3 & earncat==13 & year==1990
+replace earnings=27500 if country==3 & earncat==14 & year==1990
+replace earnings=30500 if country==3 & earncat==15 & year==1990
+replace earnings=33500 if country==3 & earncat==16 & year==1990
+replace earnings=3000 if country==3 & earncat==1 & year==1991
+replace earnings=5000 if country==3 & earncat==2 & year==1991
+replace earnings=7000 if country==3 & earncat==3 & year==1991
+replace earnings=9000 if country==3 & earncat==4 & year==1991
+replace earnings=11000 if country==3 & earncat==5 & year==1991
+replace earnings=13500 if country==3 & earncat==6 & year==1991
+replace earnings=16500 if country==3 & earncat==7 & year==1991
+replace earnings=19000 if country==3 & earncat==8 & year==1991
+replace earnings=21500 if country==3 & earncat==9 & year==1991
+replace earnings=24500 if country==3 & earncat==10 & year==1991
+replace earnings=27500 if country==3 & earncat==11 & year==1991
+replace earnings=30500 if country==3 & earncat==12 & year==1991
+replace earnings=33500 if country==3 & earncat==13 & year==1991
+replace earnings=36500 if country==3 & earncat==14 & year==1991
+replace earnings=3000 if country==3 & earncat==3 & year>1991 & year<1996
+replace earnings=5000 if country==3 & earncat==5 & year>1991 & year<1996
+replace earnings=7000 if country==3 & earncat==7 & year>1991 & year<1996
+replace earnings=9000 if country==3 & earncat==8 & year>1991 & year<1996
+replace earnings=11000 if country==3 & earncat==9 & year>1991 & year<1996
+replace earnings=13500 if country==3 & earncat==10 & year>1991 & year<1996
+replace earnings=16500 if country==3 & earncat==11 & year>1991 & year<1996
+replace earnings=19000 if country==3 & earncat==12 & year>1991 & year<1996
+replace earnings=21500 if country==3 & earncat==13 & year>1991 & year<1996
+replace earnings=24500 if country==3 & earncat==14 & year>1991 & year<1996
+replace earnings=27500 if country==3 & earncat==15 & year>1991 & year<1996
+replace earnings=30500 if country==3 & earncat==16 & year>1991 & year<1996
+replace earnings=33500 if country==3 & earncat==17 & year<1996
+replace earnings=36500 if country==3 & earncat==18 & year<1996
+replace earnings=39500 if country==3 & earncat==19 & year<1996
+replace earnings=42500 if country==3 & earncat==20 & year<1996
+replace earnings=500 if country==4 & earncat==1 & year<1996
+replace earnings=2000 if country==4 & earncat==2 & year<1996
+replace earnings=3500 if country==4 & earncat==3 & year<1996
+replace earnings=4500 if country==4 & earncat==4 & year<1996
+replace earnings=5500 if country==4 & earncat==5 & year<1996
+replace earnings=6500 if country==4 & earncat==6 & year<1996
+replace earnings=7500 if country==4 & earncat==7 & year<1996
+replace earnings=9000 if country==4 & earncat==8 & year<1996
+replace earnings=11250 if country==4 & earncat==9 & year<1996
+replace earnings=13750 if country==4 & earncat==10 & year<1996
+replace earnings=16250 if country==4 & earncat==11 & year<1996
+replace earnings=18750 if country==4 & earncat==12 & year<1996
+replace earnings=21250 if country==4 & earncat==13 & year<1996
+replace earnings=23750 if country==4 & earncat==14 & year<1996
+replace earnings=30000 if country==4 & earncat==15 & year==1985
+replace earnings=42500 if country==4 & earncat==16 & year==1985
+replace earnings=57500 if country==4 & earncat==17 & year==1985
+replace earnings=27500 if country==4 & earncat==15 & year>1985 & year<1996
+replace earnings=32500 if country==4 & earncat==16 & year>1985 & year<1996
+replace earnings=37500 if country==4 & earncat==17 & year>1985 & year<1996
+replace earnings=45000 if country==4 & earncat==18 & year<1996
+replace earnings=55000 if country==4 & earncat==19 & year<1996
+replace earnings=67500 if country==4 & earncat==20 & year<1996
+replace earnings=82500 if country==4 & earncat==21 & year<1996
+replace earnings=500 if country==4 & earn==418 & earncat==. & year<1996
+replace earnings=2000 if country==4 & earn==1671 & earncat==. & year<1996
+replace earnings=3500 if country==4 & earn==2925 & earncat==. & year<1996
+replace earnings=4500 if country==4 & earn==3760 & earncat==. & year<1996
+replace earnings=5500 if country==4 & earn==4596 & earncat==. & year<1996
+replace earnings=6500 if country==4 & earn==5432 & earncat==. & year<1996
+replace earnings=7500 if country==4 & earn==6267 & earncat==. & year<1996
+replace earnings=9000 if country==4 & earn==7521 & earncat==. & year<1996
+replace earnings=11250 if country==4 & earn==9401 & earncat==. & year<1996
+replace earnings=13750 if country==4 & earn==11490 & earncat==. & year<1996
+replace earnings=16250 if country==4 & earn==13579 & earncat==. & year<1996
+replace earnings=18750 if country==4 & earn==15668 & earncat==. & year<1996
+replace earnings=21250 if country==4 & earn==17757 & earncat==. & year<1996
+replace earnings=23750 if country==4 & earn==19846 & earncat==. & year<1996
+replace earnings=27500 if country==4 & earn==22980 & earncat==. & year<1996
+replace earnings=32500 if country==4 & earn==27158 & earncat==. & year<1996
+replace earnings=37500 if country==4 & earn==31336 & earncat==. & year<1996
+replace earnings=45000 if country==4 & earn==37603 & earncat==. & year<1996
+replace earnings=55000 if country==4 & earn==45959 & earncat==. & year<1996
+replace earnings=67500 if country==4 & earn==56405 & earncat==. & year<1996
+replace earnings=82500 if country==4 & earn==111284 & earncat==. & year<1996
+replace earnings=500 if country==4 & earn==700 & year<1996
+replace earnings=2000 if country==4 & earn==1500 & year<1996
+replace earnings=3000 if country==5 & earncat==1 & year<1994
+replace earnings=5000 if country==5 & earncat==2 & year<1994
+replace earnings=7000 if country==5 & earncat==3 & year<1994
+replace earnings=9000 if country==5 & earncat==4 & year<1994
+replace earnings=11000 if country==5 & earncat==5 & year<1994
+replace earnings=13000 if country==5 & earncat==6 & year<1994
+replace earnings=15000 if country==5 & earncat==7 & year<1994
+replace earnings=17000 if country==5 & earncat==8 & year<1994
+replace earnings=19000 if country==5 & earncat==9 & year<1994
+replace earnings=21000 if country==5 & earncat==10 & year<1994
+replace earnings=23000 if country==5 & earncat==11 & year<1994
+replace earnings=25000 if country==5 & earncat==12 & year<1994
+replace earnings=27000 if country==5 & earncat==13 & year<1994
+replace earnings=29000 if country==5 & earncat==14 & year<1994
+replace earnings=31000 if country==5 & earncat==15 & year<1994
+replace earnings=33000 if country==5 & earncat==16 & year<1994
+replace earnings=35000 if country==5 & earncat==17 & year<1994
+replace earnings=37000 if country==5 & earncat==18 & year<1994
+replace earnings=39000 if country==5 & earncat==19 & year<1994
+replace earnings=41000 if country==5 & earncat==20 & year<1994
+replace earnings=7000 if country==7 & earncat==1 & year<1996
+replace earnings=10500 if country==7 & earncat==2 & year<1996
+replace earnings=13500 if country==7 & earncat==3 & year<1996
+replace earnings=16500 if country==7 & earncat==4 & year<1996
+replace earnings=19500 if country==7 & earncat==5 & year<1996
+replace earnings=22500 if country==7 & earncat==6 & year<1996
+replace earnings=25500 if country==7 & earncat==7 & year<1996
+replace earnings=28500 if country==7 & earncat==8 & year<1996
+replace earnings=31500 if country==7 & earncat==9 & year<1996
+replace earnings=36000 if country==7 & earncat==10 & year<1996
+replace earnings=42000 if country==7 & earncat==11 & year<1996
+replace earnings=48000 if country==7 & earncat==12 & year<1996
+replace earnings=57000 if country==7 & earncat==13 & year<1996
+replace earnings=69000 if country==7 & earncat==14 & year<1996
+replace earnings=87000 if country==7 & earncat==15 & year<1996
+replace earnings=111000 if country==7 & earncat==16 & year<1996
+replace earnings=135000 if country==7 & earncat==17 & year<1996
+replace earnings=25 if country==8 & earncat==1 & year>1987 & year<1996
+replace earnings=45 if country==8 & earncat==2 & year>1987 & year<1996
+replace earnings=75 if country==8 & earncat==3 & year>1987 & year<1996
+replace earnings=105 if country==8 & earncat==4 & year>1987 & year<1996
+replace earnings=135 if country==8 & earncat==5 & year>1987 & year<1996
+replace earnings=165 if country==8 & earncat==6 & year>1987 & year<1996
+replace earnings=195 if country==8 & earncat==7 & year>1987 & year<1996
+replace earnings=225 if country==8 & earncat==8 & year>1987 & year<1996
+replace earnings=255 if country==8 & earncat==9 & year>1987 & year<1996
+replace earnings=285 if country==8 & earncat==10 & year>1987 & year<1996
+replace earnings=315 if country==8 & earncat==11 & year>1987 & year<1996
+replace earnings=345 if country==8 & earncat==12 & year>1987 & year<1996
+replace earnings=375 if country==8 & earncat==13 & year>1987 & year<1996
+replace earnings=405 if country==8 & earncat==14 & year>1987 & year<1996
+replace earnings=435 if country==8 & earncat==15 & year>1987 & year<1996
+replace earnings=465 if country==8 & earncat==16 & year>1987 & year<1996
+replace earnings=495 if country==8 & earncat==17 & year>1987 & year<1996
+replace earnings=555 if country==8 & earncat==18 & year>1987 & year<1996
+replace earnings=1500 if country==9 & earncat==1 & year==1988
+replace earnings=2500 if country==9 & earncat==2 & year==1988
+replace earnings=3500 if country==9 & earncat==3 & year==1988
+replace earnings=4500 if country==9 & earncat==4 & year==1988
+replace earnings=5500 if country==9 & earncat==5 & year==1988
+replace earnings=6500 if country==9 & earncat==6 & year==1988
+replace earnings=7500 if country==9 & earncat==7 & year==1988
+replace earnings=8500 if country==9 & earncat==8 & year==1988
+replace earnings=9500 if country==9 & earncat==9 & year==1988
+replace earnings=11000 if country==9 & earncat==10 & year==1988
+replace earnings=13500 if country==9 & earncat==11 & year<1996
+replace earnings=17500 if country==9 & earncat==12 & year<1996
+replace earnings=22500 if country==9 & earncat==13 & year<1996
+replace earnings=27500 if country==9 & earncat==14 & year<1996
+replace earnings=32500 if country==9 & earncat==15 & year<1996
+replace earnings=37500 if country==9 & earncat==16 & year<1996
+replace earnings=1500 if country==9 & earncat==1 & year>1988 & year<1991
+replace earnings=3625 if country==9 & earncat==2 & year>1988 & year<1991
+replace earnings=5000 if country==9 & earncat==3 & year>1988 & year<1991
+replace earnings=6500 if country==9 & earncat==4 & year>1988 & year<1991
+replace earnings=8500 if country==9 & earncat==5 & year>1988 & year<1991
+replace earnings=10750 if country==9 & earncat==6 & year>1988 & year<1991
+replace earnings=13500 if country==9 & earncat==7 & year>1988 & year<1991
+replace earnings=17000 if country==9 & earncat==8 & year>1988 & year<1991
+replace earnings=22500 if country==9 & earncat==9 & year>1988 & year<1991
+replace earnings=30000 if country==9 & earncat==10 & year>1988 & year<1991
+replace earnings=40 if country==9 & earncat==1 & year>1990 & year<1995
+replace earnings=75 if country==9 & earncat==2 & year>1990 & year<1995
+replace earnings=125 if country==9 & earncat==3 & year>1990 & year<1995
+replace earnings=175 if country==9 & earncat==4 & year>1990 & year<1995
+replace earnings=250 if country==9 & earncat==5 & year>1990 & year<1995
+replace earnings=350 if country==9 & earncat==6 & year>1990 & year<1995
+replace earnings=450 if country==9 & earncat==7 & year>1990 & year<1995
+replace earnings=600 if country==9 & earncat==8 & year>1990 & year<1995
+replace earnings=800 if country==9 & earncat==9 & year>1990 & year<1995
+replace earnings=earnings*50 if country==9 & year>1990 & year<1995
+replace earnings=40000 if country==10 & earncat==1 & year>1989 & year<1996
+replace earnings=75000 if country==10 & earncat==2 & year>1989 & year<1996
+replace earnings=125000 if country==10 & earncat==3 & year>1989 & year<1996
+replace earnings=175000 if country==10 & earncat==4 & year>1989 & year<1996
+replace earnings=225000 if country==10 & earncat==5 & year>1989 & year<1996
+replace earnings=275000 if country==10 & earncat==6 & year>1989 & year<1996
+replace earnings=325000 if country==10 & earncat==7 & year>1989 & year<1996
+replace earnings=250 if country==11 & earncat==1 & year<1996
+replace earnings=750 if country==11 & earncat==2 & year<1996
+replace earnings=1250 if country==11 & earncat==3 & year<1996
+replace earnings=1750 if country==11 & earncat==4 & year<1996
+replace earnings=2250 if country==11 & earncat==5 & year<1996
+replace earnings=2750 if country==11 & earncat==6 & year<1996
+replace earnings=3500 if country==11 & earncat==7 & year<1996
+replace earnings=4500 if country==11 & earncat==8 & year<1996
+replace earnings=5500 if country==11 & earncat==9 & year<1996
+replace earnings=8000 if country==11 & earncat==10 & year<1996
+replace earnings=15000 if country==11 & earncat==11 & year<1996
+replace earnings=25000 if country==11 & earncat==12 & year<1996
+replace earnings=7000 if country==16 & earncat==1 & year<1996
+replace earnings=12500 if country==16 & earncat==2 & year<1996
+replace earnings=17500 if country==16 & earncat==3 & year<1996
+replace earnings=22500 if country==16 & earncat==4 & year<1996
+replace earnings=27500 if country==16 & earncat==5 & year<1996
+replace earnings=35000 if country==16 & earncat==6 & year<1996
+replace earnings=45000 if country==16 & earncat==7 & year<1996
+replace earnings=60000 if country==16 & earncat==8 & year<1996
+replace earnings=80000 if country==16 & earncat==9 & year<1996
+replace earnings=1250000 if country==18 & earn==999996 & year<1995
+replace earnings=100000 if country==18 & earn==. & earncat==1 & year==1995
+replace earnings=300000 if country==18 & earn==. & earncat==2 & year==1995
+replace earnings=500000 if country==18 & earn==. & earncat==3 & year==1995
+replace earnings=700000 if country==18 & earn==. & earncat==4 & year==1995
+replace earnings=900000 if country==18 & earn==. & earncat==5 & year==1995
+replace earnings=1100000 if country==18 & earn==. & earncat==6 & year==1995
+replace earnings=1300000 if country==18 & earn==. & earncat==7 & year==1995
+replace earnings=1500000 if country==18 & earn==. & earncat==8 & year==1995
+replace earnings=1700000 if country==18 & earn==. & earncat==9 & year==1995
+replace earnings=1900000 if country==18 & earn==. & earncat==10 & year==1995
+replace earnings=2100000 if country==18 & earn==. & earncat==11 & year==1995
+replace earnings=2300000 if country==18 & earn==. & earncat==12 & year==1995
+replace earnings=2500000 if country==18 & earn==. & earncat==13 & year==1995
+replace earnings=2700000 if country==18 & earn==. & earncat==14 & year==1995
+replace earnings=2900000 if country==18 & earn==. & earncat==15 & year==1995
+replace earnings=4000000 if country==18 & earn==. & earncat==16 & year==1995
+replace earnings=6000000 if country==18 & earn==. & earncat==17 & year==1995
+replace earnings=8500000 if country==18 & earn==. & earncat==18 & year==1995
+replace earnings=12500000 if country==18 & earn==. & earncat==19 & year==1995
+replace earnings=12500000 if country==18 & earn==999996 & year==1995
+replace earnings=800 if country==22 & earncat==1 & year<1996
+replace earnings=1500 if country==22 & earncat==2 & year<1996
+replace earnings=2500 if country==22 & earncat==3 & year<1996
+replace earnings=3500 if country==22 & earncat==4 & year<1996
+replace earnings=4500 if country==22 & earncat==5 & year<1996
+replace earnings=5500 if country==22 & earncat==6 & year<1996
+replace earnings=6500 if country==22 & earncat==7 & year<1996
+replace earnings=7500 if country==22 & earncat==8 & year<1996
+replace earnings=8500 if country==22 & earncat==9 & year<1996
+replace earnings=9500 if country==22 & earncat==10 & year<1996
+replace earnings=10500 if country==22 & earncat==11 & year<1996
+replace earnings=800 if country==23 & earncat==1 & year<1996
+replace earnings=1500 if country==23 & earncat==2 & year<1996
+replace earnings=2500 if country==23 & earncat==3 & year<1996
+replace earnings=3500 if country==23 & earncat==4 & year<1996
+replace earnings=4500 if country==23 & earncat==5 & year<1996
+replace earnings=5500 if country==23 & earncat==6 & year<1996
+replace earnings=6500 if country==23 & earncat==7 & year<1996
+replace earnings=7500 if country==23 & earncat==8 & year<1996
+replace earnings=8500 if country==23 & earncat==9 & year<1996
+replace earnings=9500 if country==23 & earncat==10 & year<1996
+replace earnings=11000 if country==23 & earncat==11 & year<1996
+replace earnings=13500 if country==23 & earncat==12 & year<1996
+replace earnings=16500 if country==23 & earncat==13 & year<1996
+replace earnings=40000 if country==24 & earncat==1 & year<1996
+replace earnings=60000 if country==24 & earncat==2 & year<1996
+replace earnings=87500 if country==24 & earncat==3 & year<1996
+replace earnings=125000 if country==24 & earncat==4 & year<1996
+replace earnings=175000 if country==24 & earncat==5 & year<1996
+replace earnings=237500 if country==24 & earncat==6 & year<1996
+replace earnings=312500 if country==24 & earncat==7 & year<1996
+replace earnings=400000 if country==24 & earncat==8 & year<1996
+replace earnings=500000 if country==24 & earncat==9 & year<1996
+replace earnings=300 if earn==. & earncat==1 & country==27 & year<1995
+replace earnings=500 if earn==. & earncat==2 & country==27 & year<1995
+replace earnings=700 if earn==. & earncat==3 & country==27 & year<1995
+replace earnings=900 if earn==. & earncat==4 & country==27 & year<1995
+replace earnings=1125 if earn==. & earncat==5 & country==27 & year<1995
+replace earnings=1375 if earn==. & earncat==6 & country==27 & year<1995
+replace earnings=1625 if earn==. & earncat==7 & country==27 & year<1996
+replace earnings=1875 if earn==. & earncat==8 & country==27 & year<1996
+replace earnings=2125 if earn==. & earncat==9 & country==27 & year<1996
+replace earnings=2375 if earn==. & earncat==10 & country==27 & year<1996
+replace earnings=2625 if earn==. & earncat==11 & country==27 & year<1996
+replace earnings=2875 if earn==. & earncat==12 & country==27 & year<1996
+replace earnings=3250 if earn==. & earncat==13 & country==27 & year<1996
+replace earnings=3750 if earn==. & earncat==14 & country==27 & year<1996
+replace earnings=4250 if earn==. & earncat==15 & country==27 & year<1996
+replace earnings=4750 if earn==. & earncat==16 & country==27 & year<1996
+replace earnings=5250 if earn==. & earncat==17 & country==27 & year<1996
+replace earnings=5750 if earn==. & earncat==18 & country==27 & year<1996
+replace earnings=7000 if earn==. & earncat==19 & country==27 & year<1996
+replace earnings=9000 if earn==. & earncat==20 & country==27 & year<1996
+replace earnings=12500 if earn==. & earncat==21 & country==27 & year<1996
+replace earnings=1500 if country==28 & earncat==1 & year<1990 & year<1996
+replace earnings=2500 if country==28 & earncat==2 & year<1990 & year<1996
+replace earnings=3500 if country==28 & earncat==3 & year<1990 & year<1996
+replace earnings=4500 if country==28 & earncat==4 & year<1990 & year<1996
+replace earnings=5500 if country==28 & earncat==5 & year<1990 & year<1996
+replace earnings=6500 if country==28 & earncat==6 & year<1990 & year<1996
+replace earnings=7500 if country==28 & earncat==7 & year<1990 & year<1996
+replace earnings=9000 if country==28 & earncat==8 & year<1990 & year<1996
+replace earnings=11000 if country==28 & earncat==9 & year<1990 & year<1996
+replace earnings=13500 if country==28 & earncat==10 & year<1990 & year<1996
+replace earnings=16500 if country==28 & earncat==11 & year<1990 & year<1996
+replace earnings=19000 if country==28 & earncat==12 & year<1990 & year<1996
+replace earnings=21500 if country==28 & earncat==13 & year<1990 & year<1996
+replace earnings=24500 if country==28 & earncat==14 & year<1990 & year<1996
+replace earnings=2500 if country==28 & earncat==1 & year==1990
+replace earnings=3500 if country==28 & earncat==2 & year==1990
+replace earnings=4500 if country==28 & earncat==3 & year==1990
+replace earnings=5500 if country==28 & earncat==4 & year==1990
+replace earnings=6500 if country==28 & earncat==5 & year==1990
+replace earnings=7500 if country==28 & earncat==6 & year==1990
+replace earnings=9000 if country==28 & earncat==7 & year==1990
+replace earnings=11000 if country==28 & earncat==8 & year==1990
+replace earnings=13500 if country==28 & earncat==9 & year==1990
+replace earnings=16500 if country==28 & earncat==10 & year==1990
+replace earnings=19000 if country==28 & earncat==11 & year==1990
+replace earnings=21500 if country==28 & earncat==12 & year==1990
+replace earnings=24500 if country==28 & earncat==13 & year==1990
+replace earnings=27500 if country==28 & earncat==14 & year==1990
+replace earnings=30500 if country==28 & earncat==15 & year==1990
+replace earnings=33500 if country==28 & earncat==16 & year==1990
+replace earnings=3000 if country==28 & earncat==1 & year==1991
+replace earnings=5000 if country==28 & earncat==2 & year==1991
+replace earnings=7000 if country==28 & earncat==3 & year==1991
+replace earnings=9000 if country==28 & earncat==4 & year==1991
+replace earnings=11000 if country==28 & earncat==5 & year==1991
+replace earnings=13500 if country==28 & earncat==6 & year==1991
+replace earnings=16500 if country==28 & earncat==7 & year==1991
+replace earnings=19000 if country==28 & earncat==8 & year==1991
+replace earnings=21500 if country==28 & earncat==9 & year==1991
+replace earnings=24500 if country==28 & earncat==10 & year==1991
+replace earnings=27500 if country==28 & earncat==11 & year==1991
+replace earnings=30500 if country==28 & earncat==12 & year==1991
+replace earnings=33500 if country==28 & earncat==13 & year==1991
+replace earnings=36500 if country==28 & earncat==14 & year==1991
+replace earnings=3000 if country==28 & earncat==3 & year>1992 & year<1996
+replace earnings=5000 if country==28 & earncat==5 & year>1991 & year<1996
+replace earnings=7000 if country==28 & earncat==7 & year>1991 & year<1996
+replace earnings=9000 if country==28 & earncat==8 & year>1991 & year<1996
+replace earnings=11000 if country==28 & earncat==9 & year>1991 & year<1996
+replace earnings=13500 if country==28 & earncat==10 & year>1991 & year<1996
+replace earnings=16500 if country==28 & earncat==11 & year>1991 & year<1996
+replace earnings=19000 if country==28 & earncat==12 & year>1991 & year<1996
+replace earnings=21500 if country==28 & earncat==13 & year>1991 & year<1996
+replace earnings=24500 if country==28 & earncat==14 & year>1991 & year<1996
+replace earnings=27500 if country==28 & earncat==15 & year>1991 & year<1996
+replace earnings=30500 if country==28 & earncat==16 & year>1991 & year<1996
+replace earnings=33500 if country==28 & earncat==17 & year<1996
+replace earnings=36500 if country==28 & earncat==18 & year<1996
+replace earnings=39500 if country==28 & earncat==19 & year<1996
+replace earnings=42500 if country==28 & earncat==20 & year<1996
+
+replace earnings=earn if year==1996
+replace earnings=earnings/12 if country==1 & year==1996
+replace earnings=earnings/12 if country==23 & year==1996
+replace earnings=earnings/12 if country==7 & year==1996
+replace earnings=earnings/12 if country==16 & year==1996
+replace earnings=earnings/12 if country==4 & year==1996
+replace earnings=14000 if country==18 & earn==14 & year==1996
+replace earnings=800000 if country==23 & earn==800 & year==1996
+replace earnings=16500000 if country==23 & earn==16500 & year==1996
+replace earnings=26000000 if country==18 & earn==26000 & year==1996
+replace earnings=990000 if country==26 & earn==999000 & year==1996
+replace earnings=1000000 if country==7 & earn==999996 & year==1996
+replace earnings=999000 if country==26 & earn==999996 & year==1996
+replace earnings=999996 if country==14 & earn==999996 & year==1996
+replace earnings=. if earn>999996 & year==1996
+
+replace earnings=500 if country==17 & year==1997 & earncat==1
+replace earnings=3000 if country==17 & year==1997 & earncat==2
+replace earnings=7500 if country==17 & year==1997 & earncat==3
+replace earnings=12500 if country==17 & year==1997 & earncat==4
+replace earnings=17500 if country==17 & year==1997 & earncat==5
+replace earnings=22500 if country==17 & year==1997 & earncat==6
+replace earnings=37500 if country==17 & year==1997 & earncat==7
+replace earnings=75000 if country==17 & year==1997 & earncat==8
+replace earnings=550000 if country==17 & year==1997 & earncat==9
+replace earnings=. if country==17 & year==1997 & earncat==97
+replace earnings=. if country==17 & year==1997 & earncat==98
+replace earnings=. if country==17 & year==1997 & earncat==99
+replace earnings=. if country==17 & year==1997 & earncat==0
+
+replace earnings=500 if country==33 & year==1997 & earncat==1
+replace earnings=1500 if country==33 & year==1997 & earncat==2
+replace earnings=2500 if country==33 & year==1997 & earncat==3
+replace earnings=3500 if country==33 & year==1997 & earncat==4
+replace earnings=5000 if country==33 & year==1997 & earncat==5
+replace earnings=8000 if country==33 & year==1997 & earncat==6
+replace earnings=12500 if country==33 & year==1997 & earncat==7
+replace earnings=20000 if country==33 & year==1997 & earncat==8
+replace earnings=37500 if country==33 & year==1997 & earncat==9
+replace earnings=75000 if country==33 & year==1997 & earncat==10
+replace earnings=150000 if country==33 & year==1997 & earncat==11
+replace earnings=250000 if country==33 & year==1997 & earncat==12
+replace earnings=650000 if country==33 & year==1997 & earncat==13
+replace earnings=. if country==33 & year==1997 & earncat==0
+
+replace earnings=7500/12 if country==19 & year==1997 & earncat==1
+replace earnings=20000/12 if country==19 & year==1997 & earncat==2
+replace earnings=30000/12 if country==19 & year==1997 & earncat==3
+replace earnings=40000/12 if country==19 & year==1997 & earncat==4
+replace earnings=50000/12 if country==19 & year==1997 & earncat==5
+replace earnings=60000/12 if country==19 & year==1997 & earncat==6
+replace earnings=70000/12 if country==19 & year==1997 & earncat==7
+replace earnings=150000/12 if country==19 & year==1997 & earncat==8
+replace earnings=. if country==19 & year==1997 & earncat==9
+
+replace earnings=500 if country==11 & year==1997 & earncat==1
+replace earnings=1500 if country==11 & year==1997 & earncat==2
+replace earnings=2500 if country==11 & year==1997 & earncat==3
+replace earnings=3500 if country==11 & year==1997 & earncat==4
+replace earnings=4500 if country==11 & year==1997 & earncat==5
+replace earnings=5500 if country==11 & year==1997 & earncat==6
+replace earnings=6500 if country==11 & year==1997 & earncat==7
+replace earnings=7500 if country==11 & year==1997 & earncat==8
+replace earnings=8500 if country==11 & year==1997 & earncat==9
+replace earnings=9500 if country==11 & year==1997 & earncat==10
+replace earnings=11000 if country==11 & year==1997 & earncat==11
+replace earnings=13500 if country==11 & year==1997 & earncat==12
+replace earnings=17500 if country==11 & year==1997 & earncat==13
+replace earnings=35000 if country==11 & year==1997 & earncat==14
+replace earnings=. if country==11 & year==1997 & earncat==97
+replace earnings=. if country==11 & year==1997 & earncat==98
+replace earnings=. if country==11 & year==1997 & earncat==99
+replace earnings=. if country==11 & year==1997 & earncat==0
+
+replace earnings=earncat if country==30 & year==1997
+
+replace earnings=500 if country==14 & year==1997 & earncat==1
+replace earnings=3000 if country==14 & year==1997 & earncat==2
+replace earnings=7500 if country==14 & year==1997 & earncat==3
+replace earnings=12500 if country==14 & year==1997 & earncat==4
+replace earnings=17500 if country==14 & year==1997 & earncat==5
+replace earnings=22500 if country==14 & year==1997 & earncat==6
+replace earnings=37500 if country==14 & year==1997 & earncat==7
+replace earnings=75000 if country==14 & year==1997 & earncat==8
+replace earnings=550000 if country==14 & year==1997 & earncat==9
+replace earnings=. if country==14 & year==1997 & earncat==97
+replace earnings=. if country==14 & year==1997 & earncat==98
+replace earnings=. if country==14 & year==1997 & earncat==99
+
+replace earnings=earncat if country==2 & year==1997
+replace earnings=. if country==2 & year==1997 & earncat==999999
+
+replace earnings=earncat if country==27 & year==1997
+replace earnings=. if country==27 & year==1997 & earncat==999999
+
+replace earnings=50000/12 if country==32 & year==1997 & earncat==1
+replace earnings=125000/12 if country==32 & year==1997 & earncat==2
+replace earnings=175000/12 if country==32 & year==1997 & earncat==3
+replace earnings=225000/12 if country==32 & year==1997 & earncat==4
+replace earnings=275000/12 if country==32 & year==1997 & earncat==5
+replace earnings=350000/12 if country==32 & year==1997 & earncat==6
+replace earnings=450000/12 if country==32 & year==1997 & earncat==7
+replace earnings=550000/12 if country==32 & year==1997 & earncat==8
+replace earnings=1200000/12 if country==32 & year==1997 & earncat==9
+replace earnings=. if country==32 & year==1997 & earncat==10
+
+replace earnings=25000 if country==24 & year==1997 & earncat==0
+replace earnings=62500 if country==24 & year==1997 & earncat==1
+replace earnings=87500 if country==24 & year==1997 & earncat==2
+replace earnings=125000 if country==24 & year==1997 & earncat==3
+replace earnings=175000 if country==24 & year==1997 & earncat==4
+replace earnings=237500 if country==24 & year==1997 & earncat==5
+replace earnings=302500 if country==24 & year==1997 & earncat==6
+replace earnings=425000 if country==24 & year==1997 & earncat==7
+replace earnings=1000000 if country==24 & year==1997 & earncat==8
+replace earnings=. if country==24 & year==1997 & earncat==9
+
+replace earnings=. if country==29 & year==1997 & earncat==0
+replace earnings=1500 if country==29 & year==1997 & earncat==1
+replace earnings=4000 if country==29 & year==1997 & earncat==2
+replace earnings=6000 if country==29 & year==1997 & earncat==3
+replace earnings=8500 if country==29 & year==1997 & earncat==4
+replace earnings=12500 if country==29 & year==1997 & earncat==5
+replace earnings=17500 if country==29 & year==1997 & earncat==6
+replace earnings=22500 if country==29 & year==1997 & earncat==7
+replace earnings=27500 if country==29 & year==1997 & earncat==8
+replace earnings=35000 if country==29 & year==1997 & earncat==9
+replace earnings=45000 if country==29 & year==1997 & earncat==10
+replace earnings=100000 if country==29 & year==1997 & earncat==11
+replace earnings=. if country==29 & year==1997 & earncat==99
+
+replace earnings=. if country==3 & year==1997 & earncat==0
+replace earnings=2000 if country==3 & year==1997 & earncat==3
+replace earnings=5000 if country==3 & year==1997 & earncat==5
+replace earnings=7000 if country==3 & year==1997 & earncat==7
+replace earnings=9000 if country==3 & year==1997 & earncat==8
+replace earnings=11000 if country==3 & year==1997 & earncat==9
+replace earnings=13000 if country==3 & year==1997 & earncat==10
+replace earnings=16000 if country==3 & year==1997 & earncat==11
+replace earnings=19000 if country==3 & year==1997 & earncat==12
+replace earnings=21500 if country==3 & year==1997 & earncat==13
+replace earnings=24500 if country==3 & year==1997 & earncat==14
+replace earnings=27500 if country==3 & year==1997 & earncat==15
+replace earnings=30500 if country==3 & year==1997 & earncat==16
+replace earnings=33500 if country==3 & year==1997 & earncat==17
+replace earnings=36500 if country==3 & year==1997 & earncat==18
+replace earnings=39500 if country==3 & year==1997 & earncat==19
+replace earnings=42500 if country==3 & year==1997 & earncat==20
+replace earnings=. if country==3 & year==1997 & earncat==98
+replace earnings=. if country==3 & year==1997 & earncat==99
+
+replace earnings=3000 if country==6 & year==1997 & earncat==1
+replace earnings=7500 if country==6 & year==1997 & earncat==2
+replace earnings=15000 if country==6 & year==1997 & earncat==3
+replace earnings=22500 if country==6 & year==1997 & earncat==4
+replace earnings=37500 if country==6 & year==1997 & earncat==5
+replace earnings=75000 if country==6 & year==1997 & earncat==6
+replace earnings=550000 if country==6 & year==1997 & earncat==7
+replace earnings=. if country==6 & year==1997 & earncat==8
+replace earnings=. if country==6 & year==1997 & earncat==9
+replace earnings=. if country==6 & year==1997 & earncat==0
+
+replace earnings=12500 if country==8 & year==1997 & earncat==1
+replace earnings=17500 if country==8 & year==1997 & earncat==2
+replace earnings=25000 if country==8 & year==1997 & earncat==3
+replace earnings=35000 if country==8 & year==1997 & earncat==4
+replace earnings=45000 if country==8 & year==1997 & earncat==5
+replace earnings=55000 if country==8 & year==1997 & earncat==6
+replace earnings=65000 if country==8 & year==1997 & earncat==7
+replace earnings=75000 if country==8 & year==1997 & earncat==8
+replace earnings=85000 if country==8 & year==1997 & earncat==9
+replace earnings=95000 if country==8 & year==1997 & earncat==10
+replace earnings=105000 if country==8 & year==1997 & earncat==11
+replace earnings=115000 if country==8 & year==1997 & earncat==12
+replace earnings=185000 if country==8 & year==1997 & earncat==13
+replace earnings=. if country==8 & year==1997 & earncat==99
+replace earnings=. if country==8 & year==1997 & earncat==0
+
+replace earnings=. if country==22 & year==1997 & earncat==0
+replace earnings=1000 if country==22 & year==1997 & earncat==1
+replace earnings=3000 if country==22 & year==1997 & earncat==2
+replace earnings=5000 if country==22 & year==1997 & earncat==3
+replace earnings=7000 if country==22 & year==1997 & earncat==4
+replace earnings=9000 if country==22 & year==1997 & earncat==5
+replace earnings=12500 if country==22 & year==1997 & earncat==6
+replace earnings=30000 if country==22 & year==1997 & earncat==7
+replace earnings=. if country==22 & year==1997 & earncat==8
+replace earnings=. if country==22 & year==1997 & earncat==9
+
+replace earnings=500000 if country==23 & year==1997 & earncat==500
+replace earnings=1500000 if country==23 & year==1997 & earncat==1500
+replace earnings=2500000 if country==23 & year==1997 & earncat==2500
+replace earnings=3500000 if country==23 & year==1997 & earncat==3500
+replace earnings=4500000 if country==23 & year==1997 & earncat==4500
+replace earnings=5500000 if country==23 & year==1997 & earncat==5500
+replace earnings=6500000 if country==23 & year==1997 & earncat==6500
+replace earnings=7500000 if country==23 & year==1997 & earncat==7500
+replace earnings=8500000 if country==23 & year==1997 & earncat==8500
+replace earnings=9500000 if country==23 & year==1997 & earncat==9500
+replace earnings=11000000 if country==23 & year==1997 & earncat==11000
+replace earnings=13500000 if country==23 & year==1997 & earncat==13500
+replace earnings=30000000 if country==23 & year==1997 & earncat==20000
+replace earnings=. if country==23 & year==1997 & earncat==0
+replace earnings=. if country==23 & year==1997 & earncat==999997
+replace earnings=. if country==23 & year==1997 & earncat==999998
+replace earnings=. if country==23 & year==1997 & earncat==999999
+
+replace earnings=25000 if country==10 & year==1997 & earncat==1
+replace earnings=75000 if country==10 & year==1997 & earncat==2
+replace earnings=125000 if country==10 & year==1997 & earncat==3
+replace earnings=175000 if country==10 & year==1997 & earncat==4
+replace earnings=250000 if country==10 & year==1997 & earncat==5
+replace earnings=350000 if country==10 & year==1997 & earncat==6
+replace earnings=450000 if country==10 & year==1997 & earncat==7
+replace earnings=625000 if country==10 & year==1997 & earncat==8
+replace earnings=875000 if country==10 & year==1997 & earncat==9
+replace earnings=1500000 if country==10 & year==1997 & earncat==10
+replace earnings=2500000 if country==10 & year==1997 & earncat==11
+replace earnings=4000000 if country==10 & year==1997 & earncat==12
+replace earnings=. if country==10 & year==1997 & earncat==99
+replace earnings=. if country==10 & year==1997 & earncat==0
+
+replace earnings=5000/12 if country==16 & year==1997 & earncat==1
+replace earnings=12500/12 if country==16 & year==1997 & earncat==2
+replace earnings=17500/12 if country==16 & year==1997 & earncat==3
+replace earnings=22500/12 if country==16 & year==1997 & earncat==4
+replace earnings=27500/12 if country==16 & year==1997 & earncat==5
+replace earnings=35000/12 if country==16 & year==1997 & earncat==6
+replace earnings=45000/12 if country==16 & year==1997 & earncat==7
+replace earnings=60000/12 if country==16 & year==1997 & earncat==8
+replace earnings=140000/12 if country==16 & year==1997 & earncat==9
+replace earnings=. if country==16 & year==1997 & earncat==99
+
+replace earnings=15000 if country==31 & year==1997 & earncat==1
+replace earnings=45000 if country==31 & year==1997 & earncat==2
+replace earnings=80000 if country==31 & year==1997 & earncat==3
+replace earnings=130000 if country==31 & year==1997 & earncat==4
+replace earnings=230000 if country==31 & year==1997 & earncat==5
+replace earnings=600000 if country==31 & year==1997 & earncat==6
+replace earnings=. if country==31 & year==1997 & earncat==8
+replace earnings=. if country==31 & year==1997 & earncat==9
+
+replace earnings=250 if country==15 & year==1997 & earncat==1
+replace earnings=750 if country==15 & year==1997 & earncat==2
+replace earnings=1250 if country==15 & year==1997 & earncat==3
+replace earnings=1750 if country==15 & year==1997 & earncat==4
+replace earnings=2250 if country==15 & year==1997 & earncat==5
+replace earnings=2750 if country==15 & year==1997 & earncat==6
+replace earnings=3500 if country==15 & year==1997 & earncat==7
+replace earnings=4500 if country==15 & year==1997 & earncat==8
+replace earnings=7500 if country==15 & year==1997 & earncat==9
+replace earnings=12500 if country==15 & year==1997 & earncat==10
+replace earnings=30000 if country==15 & year==1997 & earncat==11
+replace earnings=. if country==15 & year==1997 & earncat==95
+replace earnings=. if country==15 & year==1997 & earncat==98
+replace earnings=. if country==15 & year==1997 & earncat==99
+replace earnings=. if country==15 & year==1997 & earncat==0
+
+replace earnings=. if country==21 & year==1997 & earncat==0
+replace earnings=1500 if country==21 & year==1997 & earncat==1
+replace earnings=3500 if country==21 & year==1997 & earncat==2
+replace earnings=4500 if country==21 & year==1997 & earncat==3
+replace earnings=5500 if country==21 & year==1997 & earncat==4
+replace earnings=6500 if country==21 & year==1997 & earncat==5
+replace earnings=7500 if country==21 & year==1997 & earncat==6
+replace earnings=8500 if country==21 & year==1997 & earncat==7
+replace earnings=9500 if country==21 & year==1997 & earncat==8
+replace earnings=10500 if country==21 & year==1997 & earncat==9
+replace earnings=11500 if country==21 & year==1997 & earncat==10
+replace earnings=13500 if country==21 & year==1997 & earncat==12
+replace earnings=14500 if country==21 & year==1997 & earncat==13
+replace earnings=17500 if country==21 & year==1997 & earncat==14
+replace earnings=22500 if country==21 & year==1997 & earncat==15
+replace earnings=32500 if country==21 & year==1997 & earncat==17
+replace earnings=47500 if country==21 & year==1997 & earncat==20
+replace earnings=87500 if country==21 & year==1997 & earncat==22
+replace earnings=200000 if country==21 & year==1997 & earncat==23
+replace earnings=. if country==21 & year==1997 & earncat==98
+replace earnings=. if country==21 & year==1997 & earncat==99
+
+replace earnings=50 if country==18 & year==1997 & earncat==1
+replace earnings=200 if country==18 & year==1997 & earncat==2
+replace earnings=400 if country==18 & year==1997 & earncat==3
+replace earnings=600 if country==18 & year==1997 & earncat==4
+replace earnings=850 if country==18 & year==1997 & earncat==5
+replace earnings=1500 if country==18 & year==1997 & earncat==6
+replace earnings=3500 if country==18 & year==1997 & earncat==7
+replace earnings=7500 if country==18 & year==1997 & earncat==8
+replace earnings=. if country==18 & year==1997 & earncat==97
+replace earnings=. if country==18 & year==1997 & earncat==99
+replace earnings=. if country==18 & year==1997 & earncat==0
+
+replace earnings=5500 if country==13 & year==1997 & earncat==1
+replace earnings=15000 if country==13 & year==1997 & earncat==2
+replace earnings=25000 if country==13 & year==1997 & earncat==3
+replace earnings=35000 if country==13 & year==1997 & earncat==4
+replace earnings=45000 if country==13 & year==1997 & earncat==5
+replace earnings=75000 if country==13 & year==1997 & earncat==6
+replace earnings=125000 if country==13 & year==1997 & earncat==7
+replace earnings=325000 if country==13 & year==1997 & earncat==8
+replace earnings=1000000 if country==13 & year==1997 & earncat==9
+replace earnings=. if country==13 & year==1997 & earncat==99
+replace earnings=. if country==13 & year==1997 & earncat==0
+
+replace earnings=25000 if country==12 & year==1997 & earncat==1
+replace earnings=75000 if country==12 & year==1997 & earncat==2
+replace earnings=125000 if country==12 & year==1997 & earncat==3
+replace earnings=175000 if country==12 & year==1997 & earncat==4
+replace earnings=250000 if country==12 & year==1997 & earncat==5
+replace earnings=350000 if country==12 & year==1997 & earncat==6
+replace earnings=800000 if country==12 & year==1997 & earncat==7
+replace earnings=. if country==12 & year==1997 & earncat==98
+replace earnings=. if country==12 & year==1997 & earncat==99
+replace earnings=. if country==12 & year==1997 & earncat==0
+
+replace earnings=earncat if country==4 & year==1997
+replace earnings=. if country==4 & year==1997 & earncat==0
+replace earnings=. if country==4 & year==1997 & earncat==99997
+replace earnings=. if country==4 & year==1997 & earncat==99998
+replace earnings=. if country==4 & year==1997 & earncat==99999
+
+replace earnings=earn if year==1998
+replace earnings=earnings/12 if country==1 & year==1998
+replace earnings=earnings/12 if country==19 & year==1998
+replace earnings=earnings/12 if country==3 & year==1998
+replace earnings=earnings*4 if country==9 & year==1998
+replace earnings=earnings/12 if country==23 & year==1998
+replace earnings=earnings/12 if country==7 & year==1998
+replace earnings=earnings/12 if country==16 & year==1998
+replace earnings=earnings/12 if country==32 & year==1998
+replace earnings=earnings/12 if country==4 & year==1998
+replace earnings=70 if country==18 & earn==70 & year==1998
+replace earnings=500000 if country==23 & earn==500 & year==1998
+replace earnings=20000000 if country==23 & earn==20000 & year==1998
+replace earnings=25000 if country==18 & earn==25000 & year==1998
+replace earnings=2000000 if country==7 & earn==999996 & year==1998
+replace earnings=2000000 if country==50 & earn==999996 & year==1998
+replace earnings=2000000 if country==34 & earn==999996 & year==1998
+replace earnings=. if earn==999997 & year==1998
+replace earnings=. if earn==999998 & year==1998
+replace earnings=. if earn==999999 & year==1998
+replace earnings=. if earn==0 & year==1998
+
+drop if year==1999 /* no codebook */
+
+replace earnings=earn if year==2000
+replace earnings=earnings/12 if country==19 & year==2000
+replace earnings=earnings/12 if country==32 & year==2000
+replace earnings=earnings/12 if country==3 & year==2000
+replace earnings=earnings*4 if country==9 & year==2000
+replace earnings=earnings/12 if country==23 & year==2000
+replace earnings=earnings/12 if country==7 & year==2000
+replace earnings=earnings/12 if country==28 & year==2000
+replace earnings=earnings/12 if country==16 & year==2000
+replace earnings=earnings/12 if country==4 & year==2000
+replace earnings=70 if country==18 & earn==70 & year==2000
+replace earnings=500000 if country==23 & earn==500 & year==2000
+replace earnings=20000000 if country==23 & earn==20000 & year==2000
+replace earnings=25000 if country==18 & earn==25000 & year==2000
+replace earnings=40000 if country==28 & earn==40000 & year==2000
+replace earnings=2000000 if country==7 & earn==999996 & year==2000
+replace earnings=2000000 if country==50 & earn==999996 & year==2000
+replace earnings=2000000 if country==34 & earn==999996 & year==2000
+replace earnings=2000000 if country==4 & earn==999996 & year==2000
+replace earnings=. if earn==999997 & year==2000
+replace earnings=. if earn==999998 & year==2000
+replace earnings=. if earn==999999 & year==2000
+replace earnings=. if earn==0 & year==2000
+
+replace earnings=earncat if year==2001
+replace earnings=earncat/12 if country==19 & year==2001
+replace earnings=earncat/12 if country==32 & year==2001
+replace earnings=earncat/12 if country==3 & year==2001
+replace earnings=earncat*4 if country==9 & year==2001
+replace earnings=earncat/12 if country==23 & year==2001
+replace earnings=earncat/12 if country==7 & year==2001
+replace earnings=earncat/12 if country==28 & year==2001
+replace earnings=earncat/12 if country==16 & year==2001
+replace earnings=earncat/12 if country==4 & year==2001
+replace earnings=70 if country==18 & earncat==70 & year==2001
+replace earnings=500000 if country==23 & earncat==500 & year==2001
+replace earnings=20000000 if country==23 & earncat==20000 & year==2001
+replace earnings=25000 if country==18 & earncat==25000 & year==2001
+replace earnings=40000 if country==28 & earncat==40000 & year==2001
+replace earnings=2000000 if country==7 & earncat==999996 & year==2001
+replace earnings=2000000 if country==50 & earncat==999996 & year==2001
+replace earnings=2000000 if country==34 & earncat==999996 & year==2001
+replace earnings=2000000 if country==4 & earncat==999996 & year==2001
+replace earnings=. if earncat==999997 & year==2001
+replace earnings=. if earncat==999998 & year==2001
+replace earnings=. if earncat==999999 & year==2001
+replace earnings=. if earncat==0 & year==2001
+
+replace earnings=earn if year==2002
+replace earnings=earnings/12 if country==1 & year==2002
+replace earnings=earnings/12 if country==32 & year==2002
+replace earnings=earnings/12 if country==3 & year==2002
+replace earnings=earnings/12 if country==28 & year==2002
+replace earnings=earnings/12 if country==23 & year==2002
+replace earnings=earnings/12 if country==10 & year==2002
+replace earnings=earnings/12 if country==16 & year==2002
+replace earnings=earnings/12 if country==4 & year==2002
+replace earnings=. if earn==999997 & year==2002
+replace earnings=. if earn==999998 & year==2002
+replace earnings=. if earn==999999 & year==2002
+replace earnings=. if earn==0 & year==2002
+replace earnings=. if country==1 & earn==0 & year==2002
+replace earnings=2000000 if country==34 & earn==999996 & year==2002
+replace earnings=112000 if country==3 & earn==59000 & year==2002
+replace earnings=40000/12 if country==28 & earn==40000 & year==2002
+replace earnings=500000 if country==23 & earn==500 & year==2002
+replace earnings=20000000 if country==23 & earn==20000 & year==2002
+replace earnings=20000000 if country==10 & earn==999996 & year==2002
+replace earnings=70 if country==18 & earn==70 & year==2002
+replace earnings=25000 if country==18 & earn==25000 & year==2002
+replace earnings=996000*2 if country==12 & earn==996000 & year==2002
+replace earnings=220000 if country==4 & earn==999996 & year==2002
+
+replace earnings=earn if year==2003
+replace earnings=earnings/12 if country==1 & year==2003
+replace earnings=earnings/12 if country==19 & year==2003
+replace earnings=earnings/12 if country==32 & year==2003
+replace earnings=earnings/12 if country==3 & year==2003
+replace earnings=earnings/12 if country==9 & year==2003
+replace earnings=(earnings/12)*1000 if country==23 & year==2003
+replace earnings=(earnings/12)*1000 if country==10 & year==2003
+replace earnings=earnings/12 if country==16 & year==2003
+replace earnings=earnings/12 if country==4 & year==2003
+replace earnings=. if earn==0 & year==2003
+replace earnings=. if earn==999997 & year==2003
+replace earnings=. if earn==999998 & year==2003
+replace earnings=. if earn==999999 & year==2003
+
+replace earnings=earn if year==2004
+replace earnings=earnings/12 if country==1 & year==2004
+replace earnings=earnings/12 if country==19 & year==2004
+replace earnings=earnings/12 if country==32 & year==2004
+replace earnings=earnings/12 if country==3 & year==2004
+replace earnings=earnings/12 if country==9 & year==2004
+replace earnings=(earnings/12)*1000 if country==23 & year==2004
+replace earnings=earnings*1000 if country==42 & year==2004
+replace earnings=earnings/12*1000 if country==10 & year==2004
+replace earnings=earnings/12 if country==4 & year==2004
+replace earnings=. if earn==0 & year==2004
+replace earnings=. if earn==999997 & year==2004
+replace earnings=. if earn==999998 & year==2004
+replace earnings=. if earn==999999 & year==2004
+replace earnings=200000 if country==37 & year==2004 & earn==99998
+replace earnings=2000000 if country==34 & year==2004 & earn==999996
+replace earnings=500000 if country==23 & earn==500 & year==2004
+replace earnings=20000000 if country==23 & earn==20000 & year==2004
+replace earnings=250000 if country==42 & earn==250 & year==2004
+replace earnings=10250000 if country==42 & earn==10250 & year==2004
+replace earnings=1000 if country==10 & earn==1000 & year==2004
+replace earnings=2000000 if country==10 & earn==999996 & year==2004
+replace earnings=50 if country==15 & earn==50 & year==2004
+replace earnings=25000 if country==18 & earn==25000 & year==2004
+replace earnings=40000 if country==18 & earn==40000 & year==2004
+replace earnings=1000 if country==13 & earn==1000 & year==2004
+replace earnings=290000 if country==13 & earn==290000 & year==2004
+replace earnings=996000 if country==12 & earn==996000 & year==2004
+replace earnings=600000 if country==40 & earn==350000 & year==2004
+replace earnings=220000 if country==4 & earn==999996 & year==2004
+replace earnings=2000000 if country==41 & earn==999996 & year==2004
+
+/* Everything onward must be check in STATA */
+
+replace earnings=earncat if year==2012
+replace earnings=. if year==2012 & earncat==0
+replace earnings=. if year==2012 & earncat==999990
+replace earnings=. if year==2012 & earncat==999999
+replace earnings=. if year==2012 & earncat==999997
+replace earnings=. if year==2012 & earncat==999998
+replace earnings=240 if country==46 & year==2012 & earncat==240
+replace earnings=17000 if country==46 & year==2012 & earncat==17000
+replace earnings=. if country==46 & year==2012 & earncat==999990
+replace earnings=10 if country==1 & year==2012 & earncat==10
+replace earnings=1000000 if country==1 & year==2012 & earncat==1000000
+replace earnings=40 if country==17 & year==2012 & earncat==40
+replace earnings=2500 if country==17 & year==2012 & earncat==2500
+replace earnings=150 if country==19 & year==2012 & earncat==150
+replace earnings=170000 if country==19 & year==2012 & earncat==170000
+replace earnings=200 if country==49 & year==2012 & earncat==200
+replace earnings=1000000 if country==49 & year==2012 & earncat==1000000
+replace earnings=1000000/12 if country==49 & year==2012 & earncat==999996
+replace earnings=50000 if country==14 & year==2012 & earncat==60000
+replace earnings=30 if country==2 & year==2012 & earncat==30
+replace earnings=33000 if country==2 & year==2012 & earncat==33000
+replace earnings=earncat/12 if country==32 & year==2012
+replace earnings=. if country==35 & year==2012 & earncat==1
+replace earnings=55000 if country==35 & year==2012 & earncat==550000
+replace earnings=earncat/12 if country==23 & year==2012
+replace earnings=earncat/12 if country==10 & year==2012
+drop if country==47 & year==2012
+replace earnings=earncat/12 if country==4 & year==2012
+
+replace earnings=earncat if year==2011
+replace earnings=. if year==2011 & earncat==0
+replace earnings=. if year==2011 & earncat==999990
+replace earnings=. if year==2011 & earncat==999997
+replace earnings=. if year==2011 & earncat==999998
+replace earnings=. if year==2011 & earncat==999999
+replace earnings=earncat/12 if country==32 & year==2011
+replace earnings=earncat/12 if country==23 & year==2011
+replace earnings=earncat/12 if country==10 & year==2011
+replace earnings=earncat/12 if country==4 & year==2011
+/* check for annual earnings */
+
+replace earnings=earncat if year==2010
+replace earnings=. if year==2010 & earncat==0
+replace earnings=. if year==2010 & earncat==999990
+replace earnings=. if year==2010 & earncat==999997
+replace earnings=. if year==2010 & earncat==999998
+replace earnings=. if year==2010 & earncat==999999
+replace earnings=earncat/12 if country==32 & year==2010
+replace earnings=earncat/12 if country==23 & year==2010
+replace earnings=earncat/12 if country==10 & year==2010
+replace earnings=earncat/12 if country==4 & year==2010
+/* check for annual earnings */
+
+replace earnings=earncat if year==2009
+replace earnings=. if year==2009 & earncat==0
+replace earnings=. if year==2009 & earncat==999990
+replace earnings=. if year==2009 & earncat==999997
+replace earnings=. if year==2009 & earncat==999998
+replace earnings=. if year==2009 & earncat==999999
+replace earnings=earncat/12 if country==1 & year==2009
+replace earnings=. if country==17 & year==2009 & earncat==8
+replace earnings=earncat/12 if country==49 & year==2009
+replace earnings=earncat/12 if country==32 & year==2009
+replace earnings=earncat/12 if country==3 & year==2009
+replace earnings=earncat/12 if country==23 & year==2009
+replace earnings=earncat*10000 if country==42 & year==2009
+replace earnings=earncat/12 if country==10 & year==2009
+replace earnings=earncat/12 if country==16 & year==2009
+replace earnings=earncat/12 if country==4 & year==2009
+
+replace earnings=earncat if year==2008
+replace earnings=. if year==2008 & earncat==0
+replace earnings=. if year==2008 & earncat==999990
+replace earnings=. if year==2008 & earncat==999997
+replace earnings=. if year==2008 & earncat==999998
+replace earnings=. if year==2008 & earncat==999999
+replace earnings=earncat/12 if country==1 & year==2008
+replace earnings=earncat/12 if country==32 & year==2008
+replace earnings=earncat/12 if country==3 & year==2008
+replace earnings=earncat/12 if country==9 & year==2008
+replace earnings=earncat/12 if country==23 & year==2008
+replace earnings=earncat/12 if country==28 & year==2008
+replace earnings=earncat/12 if country==10 & year==2008
+replace earnings=earncat/12 if country==16 & year==2008
+replace earnings=earncat/12 if country==4 & year==2008
+
+
+replace earnings=earncat if year==2007
+replace earnings=. if year==2007 & earncat==0
+replace earnings=. if year==2007 & earncat==999990
+replace earnings=. if year==2007 & earncat==999997
+replace earnings=. if year==2007 & earncat==999998
+replace earnings=. if year==2007 & earncat==999999
+replace earnings=earncat/12 if country==1 & year==2007
+replace earnings=earncat/12 if country==32 & year==2007
+replace earnings=earncat/12 if country==3 & year==2007
+replace earnings=earncat/12 if country==9 & year==2007
+replace earnings=earncat/12 if country==23 & year==2007
+replace earnings=earncat/12 if country==28 & year==2007
+replace earnings=earncat/12 if country==10 & year==2007
+replace earnings=earncat/12 if country==16 & year==2007
+replace earnings=earncat/12 if country==4 & year==2007
+replace earnings=earncat/12 if country==49 & year==2007
+/* Check for annual earnings!!! */
+
+replace earnings=earncat if year==2006
+replace earnings=. if year==2006 & earncat==0
+replace earnings=. if year==2006 & earncat==999990
+replace earnings=. if year==2006 & earncat==999997
+replace earnings=. if year==2006 & earncat==999998
+replace earnings=. if year==2006 & earncat==999999
+replace earnings=earncat/12 if country==1 & year==2006
+replace earnings=earncat/12 if country==32 & year==2006
+replace earnings=earncat/12 if country==3 & year==2006
+replace earnings=earncat/12 if country==9 & year==2006
+replace earnings=earncat/12 if country==23 & year==2006
+replace earnings=earncat/12 if country==28 & year==2006
+replace earnings=earncat/12 if country==10 & year==2006
+replace earnings=earncat/12 if country==16 & year==2006
+replace earnings=earncat/12 if country==4 & year==2006
+replace earnings=earncat/12 if country==49 & year==2006
+replace earnings=earncat/12 if country==34 & year==2006
+/* Check for annual earnings!!! */
+
+replace earnings=earncat if year==2005
+replace earnings=. if year==2005 & earncat==0
+replace earnings=. if year==2005 & earncat==999990
+replace earnings=. if year==2005 & earncat==999997
+replace earnings=. if year==2005 & earncat==999998
+replace earnings=. if year==2005 & earncat==999999
+replace earnings=earncat/12 if country==1 & year==2005
+replace earnings=earncat/12 if country==19 & year==2005
+replace earnings=earncat/12 if country==32 & year==2005
+replace earnings=earncat/12 if country==3 & year==2005
+replace earnings=earncat/12 if country==9 & year==2005
+replace earnings=(earncat*1000)/12 if country==23 & year==2005
+replace earnings=earncat*1000 if country==42 & year==2005
+replace earnings=(earncat*1000)/12 if country==10 & year==2005
+replace earnings=earncat/12 if country==16 & year==2005
+replace earnings=earncat/12 if country==4 & year==2005
+
+
+drop if condhrs==.
+replace spsschl=0 if spsschl==96
+replace spsedct=1 if spsedct==2 & country==2 & year<1992
+replace spsedct=2 if spsedct==3 & country==2 & year<1992
+replace spsedct=3 if spsedct==4 & country==2 & year<1992
+replace spsedct=4 if spsedct==5 & country==2 & year<1992
+replace spsedct=5 if spsedct==6 & country==2 & year<1992
+replace spsedct=5 if spsedct==7 & country==2 & year<1992
+replace spsedct=5 if spsedct==8 & country==2 & year<1992
+replace spsedct=6 if spsedct==9 & country==2 & year<1992
+replace spsedct=. if spsedct==7 & country==2 & year==1992
+replace spsedct=2 if spsedct==3 & country==5 & year>1990
+replace spsedct=3 if spsedct==4 & country==5 & year>1990
+replace spsedct=4 if spsedct==5 & country==5 & year>1990
+replace spsedct=5 if spsedct==6 & country==5
+replace spsedct=5 if spsedct==7 & country==5 & year>1990
+replace spsedct=7 if spsedct==8 & country==5 & year>1990
+replace spsedct=2 if spsedct==. & spsschl==8 & country==5 & year==1991
+replace spsedct=3 if spsedct==. & spsschl==10 & country==5 & year==1991
+replace spsedct=4 if spsedct==. & spsschl==11 & country==5 & year==1991
+replace spsedct=5 if spsedct==. & spsschl==12 & country==5 & year==1991
+replace spsedct=6 if spsedct==. & spsschl==13 & country==5 & year==1991
+replace spsedct=7 if spsedct==. & spsschl==16 & country==5 & year==1991
+replace spsedct=1 if spsedct==2 & country==8 & year==1987
+replace spsedct=2 if spsedct==3 & country==8 & year==1987
+replace spsedct=2 if spsedct==4 & country==8 & year==1987
+replace spsedct=3 if spsedct==5 & country==8 & year==1987
+replace spsedct=3 if spsedct==6 & country==8 & year==1987
+replace spsedct=4 if spsedct==7 & country==8 & year==1987
+replace spsedct=4 if spsedct==8 & country==8 & year==1987
+replace spsedct=5 if spsedct==9 & country==8 & year==1987
+replace spsedct=2 if spsedct==3 & country==8 & year==1991
+replace spsedct=3 if spsedct==4 & country==8 & year==1991
+replace spsedct=4 if spsedct==5 & country==8 & year==1991
+replace spsedct=5 if spsedct==6 & country==8 & year==1991
+replace spsedct=1 if spsedct==2 & country==8 & year>1991
+replace spsedct=2 if spsedct==3 & country==8 & year>1991
+replace spsedct=2 if spsedct==4 & country==8 & year>1991
+replace spsedct=3 if spsedct==5 & country==8 & year>1991
+replace spsedct=3 if spsedct==6 & country==8 & year>1991
+replace spsedct=4 if spsedct==7 & country==8 & year>1991
+replace spsedct=4 if spsedct==8 & country==8 & year>1991
+replace spsedct=5 if spsedct==9 & country==8 & year>1991
+
+replace spsedct=1 if spsedct==2 & country==27 & year<1992
+replace spsedct=2 if spsedct==3 & country==27 & year<1992
+replace spsedct=3 if spsedct==4 & country==27 & year<1992
+replace spsedct=4 if spsedct==5 & country==27 & year<1992
+replace spsedct=5 if spsedct==6 & country==27 & year<1992
+replace spsedct=5 if spsedct==7 & country==27 & year<1992
+replace spsedct=5 if spsedct==8 & country==27 & year<1992
+replace spsedct=6 if spsedct==9 & country==27 & year<1992
+replace spsedct=. if spsedct==7 & country==27 & year==1992
+replace spsedct=. if country==1 | country==4 | country==5 | country==6 | country==15
+
+replace spsedct=7 if spsedct==5 & year==2002
+replace spsedct=6 if spsedct==4 & year==2002
+replace spsedct=5 if spsedct==3 & year==2002
+replace spsedct=. if spsedct==2 & year==2002
+replace spsedct=2 if spsedct==1 & year==2002
+replace spsedct=1 if spsedct==0 & year==2002
+replace spsedct=. if spsedct==8 & year==2002
+replace spsedct=. if spsedct==9 & year==2002
+
+replace spsedct=. if spsedct==9 & year==2012
+replace spsedct=. if spsedct==99 & year==2012
+replace spsedct=7 if spsedct==6 & year==2012
+replace spsedct=7 if spsedct==5 & year==2012
+replace spsedct=6 if spsedct==4 & year==2012
+replace spsedct=5 if spsedct==3 & year==2012
+replace spsedct=5 if spsedct==2 & year==2012
+replace spsedct=3 if spsedct==1 & year==2012
+replace spsedct=1 if spsedct==0 & year==2012
+
+replace spsschl=. if country==5 | country==8 | country==9
+
+replace fathschl=0 if fathschl==96
+replace fathedct=5 if fathedct==6 & country==2 & year==1990
+replace fathedct=5 if fathedct==7 & country==2 & year==1990
+replace fathedct=6 if fathedct==8 & country==2 & year==1990
+replace fathschl=8 if fathschl==. & fathedct==2 & country==4 & year<1992
+replace fathschl=12 if fathschl==. & fathedct==3 & country==4 & year<1992
+replace fathschl=8 if fathschl==. & fathedct==3 & country==4 & year>1991
+replace fathschl=12 if fathschl==. & fathedct>3 & country==4 & year>1991
+replace fathedct=2 if fathedct==3 & country==5 & year>1990
+replace fathedct=3 if fathedct==4 & country==5 & year>1990
+replace fathedct=4 if fathedct==5 & country==5 & year>1990
+replace fathedct=5 if fathedct==6 & country==5 & year>1990
+replace fathedct=6 if fathedct==7 & country==5 & year>1990
+replace fathedct=7 if fathedct==8 & country==5 & year>1990
+replace fathschl=0 if fathschl==. & fathedct==1 & country==15
+replace fathschl=4 if fathschl==. & fathedct==2 & country==15
+replace fathedct=. if country==1 | country==4 | country==9 | country==15
+replace fathschl=. if country==5
+replace mothschl=0 if mothschl==96
+replace mothedct=5 if mothedct==6 & country==2 & year==1990
+replace mothedct=5 if mothedct==7 & country==2 & year==1990
+replace mothedct=6 if mothedct==8 & country==2 & year==1990
+replace mothschl=8 if mothschl==. & mothedct==2 & country==4 & year<1992
+replace mothschl=12 if mothschl==. & mothedct==3 & country==4 & year<1992
+replace mothschl=8 if mothschl==. & mothedct==3 & country==4 & year>1991
+replace mothschl=12 if mothschl==. & mothedct>3 & country==4 & year>1991
+replace mothedct=2 if mothedct==3 & country==5 & year>1990
+replace mothedct=3 if mothedct==4 & country==5 & year>1990
+replace mothedct=4 if mothedct==5 & country==5 & year>1990
+replace mothedct=5 if mothedct==6 & country==5 & year>1990
+replace mothedct=6 if mothedct==7 & country==5 & year>1990
+replace mothedct=7 if mothedct==8 & country==5 & year>1990
+replace mothschl=0 if mothschl==. & mothedct==1 & country==15
+replace mothschl=4 if mothschl==. & mothedct==2 & country==15
+replace mothschl=9 if mothschl==. & mothedct==4 & country==15
+replace mothedct=. if country==1 | country==4 | country==9 | country==15
+replace mothschl=. if country==5
+
+drop if earnings==.
+drop if lfstat>2 & lfstat<9
+drop if selfemp==1
+replace union=0 if union==.
+drop if age>59
+drop if age<21
+gen ya=year-1900-age
+gen dob=1 if ya<36
+replace dob=2 if ya<46 & ya>35
+replace dob=3 if ya<56 & ya>45
+replace dob=4 if ya<66 & ya>55
+replace dob=5 if ya<75 & ya>65
+drop if school>24
+gen w=(earnings/4)/condhrs
+gen ly=ln(earnings)
+gen lw=ln(w)
+lab var w " wage rate"
+lab var ly " ln earnings"
+lab var lw " ln wage rate"
+drop lfstat person selfemp ya
+drop if earnings==1
+drop if earnings==.n
+drop if earnings==.a
+save "H:\ECON509\ISSP - raw data\stata6\work\issp\1985-2012a.dta", replace
+
+
